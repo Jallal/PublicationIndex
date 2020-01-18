@@ -1,4 +1,13 @@
 
-@squid:S1481")Remove this unused "json" local variable.(È†µË
-Osquid:S1854"8Remove this useless assignment to local variable "json".(È†µË
-|squid:UselessImportCheck"SRemove this unused import 'org.springframework.web.bind.annotation.RestController'.(±íþ¡þÿÿÿÿ
+isquid:CommentedOutCodeLine&"<This block of commented-out lines of code should be removed.(éÁ¡¢8ÕÝùˆû-
+nsquid:CommentedOutCodeLine5"<This block of commented-out lines of code should be removed.(ç£Ì÷úÿÿÿÿ8æÈ©‡û-
+isquid:CommentedOutCodeLineh"<This block of commented-out lines of code should be removed.(áÎ…Ü8¯Š¾‡û-
+Gsquid:S1481")Remove this unused "json" local variable.(È†µË8æÈ©‡û-
+isquid:CommentedOutCodeLineS"<This block of commented-out lines of code should be removed.(‹ÃêÐ8Îð½‡û-
+Csquid:S1452!"&Remove usage of generic wildcard type.(¸ÄæI8æÈ©‡û-
+£%squid:RedundantThrowsDeclarationCheck!"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(¸ÄæI8ìóß™û-
+Vsquid:S1854"8Remove this useless assignment to local variable "json".(È†µË8æÈ©‡û-
+isquid:CommentedOutCodeLine-"<This block of commented-out lines of code should be removed.(¾š‹ž8Š÷ùˆû-
+nsquid:CommentedOutCodeLine7"<This block of commented-out lines of code should be removed.(™”Õˆþÿÿÿÿ8æÈ©‡û-
+nsquid:CommentedOutCodeLine>"<This block of commented-out lines of code should be removed.(¼¥ØÃùÿÿÿÿ8˜ìä‡û-
+dsquid:S00112!"FDefine and throw a dedicated exception instead of using a generic one.(¸ÄæI8æÈ©‡û-

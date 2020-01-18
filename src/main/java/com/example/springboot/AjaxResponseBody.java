@@ -21,7 +21,7 @@ public class AjaxResponseBody {
 
 
     String msg;
-    List<String[][]> result;
+    List<PublisherInfo> result;
 
     public String getMsg() {
         return msg;
@@ -31,11 +31,11 @@ public class AjaxResponseBody {
         this.msg = msg;
     }
 
-    public List<String[][]> getResult() {
+    public List<PublisherInfo> getResult() {
         return result;
     }
 
-    public void setResult(List<String[][]> result) {
+    public void setResult(List<PublisherInfo> result) {
         this.result = result;
     }
 

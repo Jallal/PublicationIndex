@@ -6,16 +6,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
-import java.util.stream.Collectors;
 
 @Controller
 public class HelloController {
@@ -140,10 +135,16 @@ public class HelloController {
 
 		}*/
 
-		List<String[][]> data = new ArrayList<>();
+		List<PublisherInfo> data = new ArrayList<>();
+		PublisherInfo item = new PublisherInfo();
+		item.setCustomerName("Jallal");
+		item.setAddress("123 Happy Street");
+		item.setCity("Happy City");
+		item.setCountry("USA");
+		item.setGender("M");
+		item.setPostalCode("48108");
+		data.add(item);
 		result.setResult(data);
 		return ResponseEntity.ok(data);
-
 	}
-
 }

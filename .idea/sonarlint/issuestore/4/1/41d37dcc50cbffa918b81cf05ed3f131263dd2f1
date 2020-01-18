@@ -1,0 +1,7 @@
+
+mjavascript:S28145"ERename "json" as this name is already used in declaration at line 37.(ÁÃÉûøÿÿÿÿ8ìÒœ‡û-
+ejavascript:UnusedVariable"":Remove the declaration of the unused 'dataItems' variable.(±¥8ìÒœ‡û-
+fjavascript:UnusedVariable%"5Remove the declaration of the unused 'json' variable.(½µ¦Ùÿÿÿÿÿ8ìÒœ‡û-
+fjavascript:UnusedVariable5"5Remove the declaration of the unused 'json' variable.(ÁÃÉûøÿÿÿÿ8ìÒœ‡û-
+_javascript:S1854%"7Remove this useless assignment to local variable "json"(½µ¦Ùÿÿÿÿÿ8ìÒœ‡û-
+_javascript:S18545"7Remove this useless assignment to local variable "json"(ÁÃÉûøÿÿÿÿ8ìÒœ‡û-

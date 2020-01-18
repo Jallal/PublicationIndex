@@ -1,8 +1,6 @@
 
 7
 pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
-V
-&src/main/webapp/WEB-INF/css/styles.css,0/e/0e0399edcf767cfa6a398da05123fa856d13e55b
 e
 5src/main/java/com/example/springboot/Application.java,a/1/a149cf73ddc826b3137cd69de41c1c75cdb53bd2
 U
@@ -11,3 +9,11 @@ i
 9src/main/java/com/example/springboot/HelloController.java,d/5/d5b3c3dc43b2980342f0bded4f3f46d35fa03eae
 W
 'src/main/webapp/WEB-INF/jsp/welcome.jsp,9/7/97967f0754c4525c3923d73fb28c8f8f07dc3072
+g
+7src/main/java/com/example/springboot/PublisherInfo.java,7/e/7eaa6be24833c56baadaeba9221bc69fffcd29a6
+j
+:src/main/java/com/example/springboot/AjaxResponseBody.java,8/e/8e037f06075d1b018444cf4014383716ba20be0f
+h
+8src/main/java/com/example/springboot/SearchCriteria.java,b/2/b293f2b0c609be380b4edce74f9f0106574462b5
+S
+#src/main/webapp/WEB-INF/jsp/main.js,4/1/41d37dcc50cbffa918b81cf05ed3f131263dd2f1
