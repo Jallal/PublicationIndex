@@ -1,6 +1,10 @@
 /*search box css start here*/
-.search-sec{
+.search-sec2{
     background: #1A4668;padding: 2rem;
+}
+
+.search-sec{
+    background: #fff;padding: 2rem;
 }
 .search-slt{
     display: block;
@@ -21,7 +25,7 @@
     line-height: 1.5;
     background-image: none;
     border: 1px solid #ccc;
-    height: calc(3rem + 2px) !important;
+   height: calc(3rem + 2px) !important;
     border-radius:0;
 }
 .wrn-btn{

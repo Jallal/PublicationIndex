@@ -20,6 +20,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 </head>
 <body>
+<!--Top of the page -->
+<section class="search-sec2">
+    <h1 class="text-light">Document search</h1>
+</section>
+<!--End of the top of the page --->
+<br/>
+<!-- Search section -->
 <section class="search-sec">
     <div class="container">
         <form action="#" method="post" novalidate="novalidate">
@@ -38,7 +45,7 @@
                             </select>
                         </div>
                         <div class="col-lg-6 col-md-3 col-sm-12 p-0">
-                                <input type="text" id="tags" class="form-control search-slt" data-role="tagsinput" />
+                            <input type="text" id="tags" class="form-control search-slt" data-role="tagsinput" />
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-12 p-0">
                             <button type="button" name="search" class="btn btn-warning search-slt2" id="search">Search</button>
@@ -47,93 +54,16 @@
                 </div>
             </div>
         </form>
+<br/>
     </div>
 </section>
+<!--End of search section-->
 
-<br />
 
-    <!-- TESTING STRAT-->
-    <div class="container mt-3">
-        <h4 class="mb-1">Accordion Example</h4>
-        <div class="accordion" id="accordionExample">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse"
-                                data-target="#collapseOne"
-                                aria-expanded="true" aria-controls="collapseOne">
-                            Limit categories
-                        </button>
-                    </h5>
-                </div>
-                <div id="collapseOne" class="collapse show"
-                     aria-labelledby="headingOne" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <div class="container">
-                            <!-- Select categories -->
-                            <div class="container">
-                                <form action="#" method="post" novalidate="novalidate">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="row">
-                                                <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                                                    <select class="form-control search-slt2" id="exampleFormControlSelect1">
-                                                        <option>Select Pickup City</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                                                    <select class="form-control btn-primary   search-slt" id="exampleFormControlSelect1">
-                                                        <option>Select Pickup City</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                                                    <select class="form-control btn-warning search-slt" id="exampleFormControlSelect1">
-                                                        <option>Select Pickup City</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                                                    <select class="form-control btn-danger search-slt" id="exampleFormControlSelect1">
-                                                        <option>Select Pickup City</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                        <option>Example one</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <!-- end of categories -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--TESTING END -->
 
-    <!-- Start of the table -->
+<!-- Start of the table -->
+
+<div class="container mt-3">
     <div class="table-responsive">
         <div align="right">
             <p><b>Total Records - <span id="total_records"></span></b></p>
@@ -156,23 +86,21 @@
 </div>
 <div style="clear:both"></div>
 <br />
-
-<br />
-<br />
-<br />
-
-<div class="container-fluid">
+<div class="container mt-3">
+<!--div class="container-fluid"-->
     <div class="row">
         <div class="col-lg-6">
             <!--graph for publications-->
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-            <div id="chart_div" style="width: 900px; height: 500px;"></div>
+            <!--div id="chart_div" style="width: 900px; height: 500px;"></div-->
+            <div id="columnchart_material" style="width:600px; height: 500px;"></div>
             <script  type="text/javascript" src="css/js/pubPerYearGraph.js"></script>
+
         </div>
         <div class="col-lg-6">
             <!--pie Chart -->
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-            <div id="piechart" style="width: 900px; height: 500px;"></div>
+            <div id="piechart" style="width: 600px; height: 500px;"></div>
             <script  type="text/javascript" src="css/js/tagPie.js"></script>
         </div>
     </div>
@@ -180,7 +108,7 @@
 </body>
 <!--script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<!--script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script-->
 </html>
 
 <script>
@@ -213,7 +141,6 @@ cache: false,
 timeout: 600000,
   success:function(data)
   {
-
     console.log("***********************************");
     console.log("I GOT A RESPONSE ");
     console.log(data);
@@ -231,7 +158,22 @@ timeout: 600000,
         html += '<td>'+data[count].city+'</td>';
         html += '<td>'+data[count].postalCode+'</td>';
         html += '<td>'+data[count].country +'</td></tr>';
+
+        jQuery.getScript("css/js/tagPie.js").done(function() {
+          console.log("yay, all good, do something *");
+          drawPieChart(data[0].publicationsPerCategory);
+        }).fail(function() {
+          console.log("boo first chart failed , fall back to something else");
+        });
       }
+
+
+      jQuery.getScript("css/js/pubPerYearGraph.js").done(function() {
+        console.log("yay, all good, do something *");
+        drawChart(data[0].publicationsPerYear);
+      }).fail(function() {
+        console.log("boo first chart failed , fall back to something else");
+      });
     }
     else
     {
@@ -256,5 +198,9 @@ $("#btn-search").prop("disabled", false);
 $('#search').click(function(){
   var query = $('#tags').val();
   fire_ajax_submit();
+
+
+
+
 });
 </script>

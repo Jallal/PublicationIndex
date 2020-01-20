@@ -137,12 +137,67 @@ public class HelloController {
 
 		List<PublisherInfo> data = new ArrayList<>();
 		PublisherInfo item = new PublisherInfo();
+
+		String[][] pebPerYear = new String[5][2];
+		//[['Year', 'Publication'], ['2014', 1000], ['2015', 1170], ['2016', 660], ['2017', 1030]];
+		pebPerYear[0][0]="Year";
+		pebPerYear[0][1]="Publication";
+		//1
+		pebPerYear[1][0]="2014";
+		pebPerYear[1][1]="1000";
+
+		//2
+		pebPerYear[2][0]="2015";
+		pebPerYear[2][1]="1170";
+
+		//3
+		pebPerYear[3][0]="2016";
+		pebPerYear[3][1]="2010";
+
+		//4
+		pebPerYear[4][0]="2017";
+		pebPerYear[4][1]="2200";
+
+		//5
+		pebPerYear[4][0]="2018";
+		pebPerYear[4][1]="2500";
+
+
+		/*publication per category*/
+		//[['Task', 'Hours per Day'], ['Work', 11], ['Eat', 2], ['Commute', 2], ['Watch TV', 2], ['Sleep', 7]]
+		String[][] pebPerCategory = new String[6][2];
+		pebPerCategory[0][0]="Task";
+		pebPerCategory[0][1]="Hours per Day";
+		//1
+		pebPerCategory[1][0]="Work";
+		pebPerCategory[1][1]="11";
+
+		//2
+		pebPerCategory[2][0]="EatME";
+		pebPerCategory[2][1]="2";
+
+		//3
+		pebPerCategory[3][0]="CommuteME";
+		pebPerCategory[3][1]="2";
+
+		//4
+		pebPerCategory[4][0]="Watch ME";
+		pebPerCategory[4][1]="2";
+
+		//5
+		pebPerCategory[5][0]="SleepME";
+		pebPerCategory[5][1]="7";
+		/***************************************************/
+
+//[['Task', 'Hours per Day'], ['Work', 11], ['Eat', 2], ['Commute', 2], ['Watch TV', 2], ['Sleep', 7]]
 		item.setCustomerName("Jallal");
 		item.setAddress("123 Happy Street");
 		item.setCity("Happy City");
 		item.setCountry("USA");
 		item.setGender("M");
 		item.setPostalCode("48108");
+		item.setPublicationsPerYear(pebPerYear);
+		item.setPublicationsPerCategory(pebPerCategory);
 		data.add(item);
 		result.setResult(data);
 		return ResponseEntity.ok(data);

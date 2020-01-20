@@ -7,7 +7,24 @@ String  CustomerName;
     String City;
     String PostalCode;
     String Country;
+    String[][] publicationsPerYear = new String[5][2];
+    String[][] publicationsPerCategory= new String[6][2];
 
+    public String[][] getPublicationsPerCategory() {
+        return publicationsPerCategory;
+    }
+
+    public void setPublicationsPerCategory(String[][] publicationsPerCategory) {
+        this.publicationsPerCategory = publicationsPerCategory;
+    }
+
+    public String[][] getPublicationsPerYear() {
+        return publicationsPerYear;
+    }
+
+    public void setPublicationsPerYear(String[][] publicationsPerYear) {
+        this.publicationsPerYear = publicationsPerYear;
+    }
     public String getCustomerName() {
         return CustomerName;
     }
