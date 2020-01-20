@@ -1,7 +1,7 @@
 
-ssquid:S00116"URename this field "PostalCode" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾·…P8àâÏ™û-
-usquid:S00116"WRename this field "CustomerName" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³ŸåU8€œÍ™û-
-psquid:S00116"QRename this field "Gender" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒŸÙ8àâÏ™û-
-nsquid:S00116"ORename this field "City" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬åê8àâÏ™û-
 vsquid:S00116"RRename this field "Address" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ù…èüÿÿÿÿ8àâÏ™û-
 vsquid:S00116	"RRename this field "Country" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ûºáİıÿÿÿÿ8àâÏ™û-
+ssquid:S00116"URename this field "PostalCode" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾·…P8àâÏ™û-
+nsquid:S00116"ORename this field "City" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬åê8àâÏ™û-
+usquid:S00116"WRename this field "CustomerName" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³ŸåU8€œÍ™û-
+psquid:S00116"QRename this field "Gender" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒŸÙ8àâÏ™û-

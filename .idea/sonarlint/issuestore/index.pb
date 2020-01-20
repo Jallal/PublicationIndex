@@ -3,8 +3,6 @@
 pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 e
 5src/main/java/com/example/springboot/Application.java,a/1/a149cf73ddc826b3137cd69de41c1c75cdb53bd2
-U
-%src/main/webapp/WEB-INF/jsp/data.json,5/f/5f24f0151dce89ee4160417eec2093b0bdedcd30
 i
 9src/main/java/com/example/springboot/HelloController.java,d/5/d5b3c3dc43b2980342f0bded4f3f46d35fa03eae
 W
@@ -17,3 +15,5 @@ h
 8src/main/java/com/example/springboot/SearchCriteria.java,b/2/b293f2b0c609be380b4edce74f9f0106574462b5
 S
 #src/main/webapp/WEB-INF/jsp/main.js,4/1/41d37dcc50cbffa918b81cf05ed3f131263dd2f1
+T
+$src/main/webapp/WEB-INF/jsp/ajax.jsp,6/6/66d3c67966dad64a04699d96fd47240d809bcf23
