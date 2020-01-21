@@ -62,7 +62,6 @@
 <!--TEST TABLE-->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bootstrap Elegant Table Design</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -223,6 +222,93 @@
 
 
 <div class="row">
+    <!-- TESTING COLLAPSABLE-->
+    <div class="col-sm-5 col-md-6">
+        <div class="table-wrapper">
+            <div class="collapse-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">
+                                Collapsible Group Item #1
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi molestiae dolorum, soluta temporibus vero perferendis quo odit eaque cum fugiat nihil earum error vitae libero nostrum sed ipsam, beatae ea.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="trigger collapsed">
+                                Collapsible Group Item #2
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            Sunt quia aperiam, officiis tempora quis quasi fugit ab ipsa quo expedita reiciendis quod iusto! Enim delectus unde voluptatem officiis molestiae repudiandae.
+                        </div>
+                    </div>
+                </div>
+
+                <!--Start of 3 anf 4 -->
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">
+                                Collapsible Group Item #1
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi molestiae dolorum, soluta temporibus vero perferendis quo odit eaque cum fugiat nihil earum error vitae libero nostrum sed ipsam, beatae ea.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="trigger collapsed">
+                                Collapsible Group Item #2
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            Sunt quia aperiam, officiis tempora quis quasi fugit ab ipsa quo expedita reiciendis quod iusto! Enim delectus unde voluptatem officiis molestiae repudiandae.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="trigger collapsed">
+                                Collapsible Group Item #2
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            Sunt quia aperiam, officiis tempora quis quasi fugit ab ipsa quo expedita reiciendis quod iusto! Enim delectus unde voluptatem officiis molestiae repudiandae.
+                        </div>
+                    </div>
+                </div>
+                <!-- End of 3 and 4 -->
+
+            </div>
+            <!-- END TESTING COLLAPSABLE-->
+        </div>
+    </div>
+
+    <!--Start of the Table -->
     <div class="col-sm-5 col-md-6">
         <div class="table-wrapper">
         <div class="table-title">
@@ -240,15 +326,7 @@
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <h2 class="text-center">Customer <b>Details</b></h2>
-                </div>
-                <div class="col-sm-4">
-                    <div class="search-box">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
-                            <input type="text" class="form-control" placeholder="Search&hellip;">
-                        </div>
-                    </div>
+                    <h2 class="text-center">Publication Details</h2>
                 </div>
             </div>
         </div>
@@ -317,7 +395,7 @@
                     <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                 </td>
             </tr>
-            <tr>
+            <!--tr>
                 <td>5</td>
                 <td>Martin Blank</td>
                 <td>Via Monte Bianco 34</td>
@@ -329,8 +407,9 @@
                     <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                     <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                 </td>
-            </tr>
+            </tr-->
             </tbody>
+            <br/>
         </table>
         <div class="clearfix">
             <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
@@ -345,45 +424,7 @@
             </ul>
         </div>
     </div>
-        </div>
-
-        <!-- TESTING COLLAPSABLE-->
-    <div class="col-sm-5 col-md-6">
-        <div class="table-wrapper">
-        <div class="collapse-group">
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                    <h4 class="panel-title">
-                        <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">
-                            Collapsible Group Item #1
-                        </a>
-                    </h4>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                    <div class="panel-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi molestiae dolorum, soluta temporibus vero perferendis quo odit eaque cum fugiat nihil earum error vitae libero nostrum sed ipsam, beatae ea.
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                    <h4 class="panel-title">
-                        <a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="trigger collapsed">
-                            Collapsible Group Item #2
-                        </a>
-                    </h4>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                    <div class="panel-body">
-                        Sunt quia aperiam, officiis tempora quis quasi fugit ab ipsa quo expedita reiciendis quod iusto! Enim delectus unde voluptatem officiis molestiae repudiandae.
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END TESTING COLLAPSABLE-->
-</div>
-</div>
+    </div>
     </div>
 <!--TEST TABLE END-->
 
@@ -414,14 +455,16 @@
 <!--end of table-->
 <!-- TEST2-->
 <div class="row">
+    <!-- TESTING COLLAPSABLE-->
     <div class="col-sm-5 col-md-6">
+        <div class="table-wrapper">
         <div class="card spur-card">
-            <div class="card-header">
+            <!--div class="card-header">
                 <div class="spur-card-icon">
                     <i class="fas fa-chart-bar"></i>
                 </div>
                 <div class="spur-card-title"> Bar Chart </div>
-                </div>
+                </div-->
             <div class="centerBlock">
             <!--graph for publications-->
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -431,20 +474,23 @@
             </div>
     </div>
     </div>
+    </div>
     <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+        <div class="table-wrapper">
         <div class="card spur-card">
-            <div class="card-header">
+            <!--div class="card-header">
                  <div class="spur-card-icon">
                      <i class="fas fa-chart-bar"></i>
                  </div>
                  <div class="spur-card-title"> Bar Chart </div>
-                 </div>
+                 </div-->
             <!--pie Chart -->
             <div class="centerBlock">
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
             <div id="piechart" style="width: 600px; height: 500px;"></div>
             <script  type="text/javascript" src="css/js/tagPie.js"></script>
         </div>
+    </div>
     </div>
     </div>
 </div>
