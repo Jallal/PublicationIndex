@@ -32,11 +32,11 @@ public class SearchCriteria {
     }
 
     public String getCategory() {
-        return Category;
+        return category;
     }
 
-    public void setCategory(String Category) {
-        this.Category = Category;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     @Override
@@ -44,13 +44,13 @@ public class SearchCriteria {
         return "SearchCriteria{" +
                 "authorName='" + authorName + '\'' +
                 ", search='" + search + '\'' +
-                ", category='" + Category + '\'' +
+                ", category='" + category + '\'' +
                 '}';
     }
 
     private String authorName;
     private String search;
-    private String Category;
+    private String category;
 
 
 }

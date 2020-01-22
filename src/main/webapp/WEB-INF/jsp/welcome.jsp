@@ -35,13 +35,11 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-12 p-0">
                             <select class="form-control search-slt" id="exampleFormControlSelect1">
-                                <option>Select Pickup City</option>
-                                <option>Example one</option>
-                                <option>Example one</option>
-                                <option>Example one</option>
-                                <option>Example one</option>
-                                <option>Example one</option>
-                                <option>Example one</option>
+                                <option>Select search criteria</option>
+                                <option>Name</option>
+                                <option>Journal</option>
+                                <option>Category</option>
+                                <option>Any</option>
                             </select>
                         </div>
                         <div class="col-lg-6 col-md-3 col-sm-12 p-0">
@@ -236,10 +234,10 @@
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                         <div class="panel-body">
-                        <a href="#" class="list-group-item list-group-item-action"  id="category">Category</a>
-                        <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-                        <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                        <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+                            <button type="button" value="Categoriess" role="button" class="list-group-item list-group-item-action"  id="category" >Category</button>
+                            <button type="button" role="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
+                            <button type="button" role="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
+                            <button type="button"  role="button" class="list-group-item list-group-item-action disabled">Vestibulum at eros</button>
                         </div>
                     </div>
                 </div>
@@ -590,16 +588,18 @@ $("#btn-search").prop("disabled", false);
 }
 
 $('#search').click(function(){
-  var query = $('#tags').val();
-  var search = {}
+  //var query = $('#tags').val();
+  var search = {};
+  search["search"] = $("#exampleFormControlSelect1").val();
   search["authorName"] = $('#tags').val();
   fire_ajax_submit(search);
 });
 
 $('#category').click(function(){
-  var query = $('#tags').val();
-  var search = {}
-  search["Category"] = $('#tags').val();
+ // var query = $('#tags').val();
+  var search = {};
+  //search["category"] = $(this).val();
+  search["category"] = $(this).val();
   fire_ajax_submit(search);
 });
 </script>
