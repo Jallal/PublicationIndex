@@ -4,14 +4,53 @@ import javax.validation.constraints.NotBlank;
 
 public class SearchCriteria {
 
-    @NotBlank(message = "username can't empty!")
-    String username;
+    //@NotBlank(message = "username can't empty!")
+    //String username;
 
-    public String getUsername() {
+    /*public String getUsername() {
         return username;
     }
 
     public void setUsername(String username) {
         this.username = username;
+    }*/
+
+    public String getAuthorName() {
+        return authorName;
     }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
+    }
+
+    public String getSearch() {
+        return search;
+    }
+
+    public void setSearch(String search) {
+        this.search = search;
+    }
+
+    public String getCategory() {
+        return Category;
+    }
+
+    public void setCategory(String Category) {
+        this.Category = Category;
+    }
+
+    @Override
+    public String toString() {
+        return "SearchCriteria{" +
+                "authorName='" + authorName + '\'' +
+                ", search='" + search + '\'' +
+                ", category='" + Category + '\'' +
+                '}';
+    }
+
+    private String authorName;
+    private String search;
+    private String Category;
+
+
 }

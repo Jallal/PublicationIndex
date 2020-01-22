@@ -32,6 +32,11 @@ public class HelloController {
 	@PostMapping("/api/search")
 	public ResponseEntity<?> getSearchResultViaAjax(@Valid @RequestBody SearchCriteria search, Errors errors) throws Exception {
 
+		System.out.print("******************************************************\n");
+		System.out.print(search.toString());
+		System.out.print("******************************************************\n");
+
+
 		AjaxResponseBody result = new AjaxResponseBody();
 
 		//If error, just return a 400 bad request, along with the error message

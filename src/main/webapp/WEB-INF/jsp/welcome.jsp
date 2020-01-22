@@ -230,13 +230,16 @@
                     <div class="panel-heading" role="tab" id="headingOne">
                         <h4 class="panel-title">
                             <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">
-                                Collapsible Group Item #1
+                                Category #1
                             </a>
                         </h4>
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                         <div class="panel-body">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi molestiae dolorum, soluta temporibus vero perferendis quo odit eaque cum fugiat nihil earum error vitae libero nostrum sed ipsam, beatae ea.
+                        <a href="#" class="list-group-item list-group-item-action"  id="category">Category</a>
+                        <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+                        <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+                        <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
                         </div>
                     </div>
                 </div>
@@ -267,7 +270,7 @@
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                         <div class="panel-body">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi molestiae dolorum, soluta temporibus vero perferendis quo odit eaque cum fugiat nihil earum error vitae libero nostrum sed ipsam, beatae ea.
+
                         </div>
                     </div>
                 </div>
@@ -518,9 +521,8 @@ fire_ajax_submit();
 
 });
 
-function fire_ajax_submit() {
+function fire_ajax_submit(search) {
 
-var search = {};
 $("#btn-search").prop("disabled", true);
 
 $.ajax({
@@ -589,10 +591,15 @@ $("#btn-search").prop("disabled", false);
 
 $('#search').click(function(){
   var query = $('#tags').val();
-  fire_ajax_submit();
+  var search = {}
+  search["authorName"] = $('#tags').val();
+  fire_ajax_submit(search);
+});
 
-
-
-
+$('#category').click(function(){
+  var query = $('#tags').val();
+  var search = {}
+  search["Category"] = $('#tags').val();
+  fire_ajax_submit(search);
 });
 </script>
