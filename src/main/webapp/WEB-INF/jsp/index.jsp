@@ -170,12 +170,12 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Name <i class="fa fa-sort"></i></th>
-                            <th>Address</th>
-                            <th>City <i class="fa fa-sort"></i></th>
-                            <th>Pin Code</th>
-                            <th>Country <i class="fa fa-sort"></i></th>
-                            <th>Actions</th>
+                            <th>Authors Name <i class="fa fa-sort"></i></th>
+                            <th>Article Title</th>
+                            <th>Publication year <i class="fa fa-sort"></i></th>
+                            <th>Document Type</th>
+                            <th>Publisher <i class="fa fa-sort"></i></th>
+                            <th>Index Keywords</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -406,12 +406,12 @@
           for (var count = 0; count < data.length; count++) {
             html += '<tr>';
             html += '<td>' + count + '</td>';
-            html += '<td>' + data[count].customerName + '</td>';
-            html += '<td>' + data[count].gender + '</td>';
-            html += '<td>' + data[count].address + '</td>';
-            html += '<td>' + data[count].city + '</td>';
-            html += '<td>' + data[count].postalCode + '</td>';
-            html += '<td>' + data[count].country + '</td></tr>';
+            html += '<td>' + data[count].authors + '</td>';
+            html += '<td>' + data[count].title + '</td>';
+            html += '<td>' + data[count].year + '</td>';
+            html += '<td>' + data[count].documentType + '</td>';
+            html += '<td>' + data[count].publisher + '</td>';
+            html += '<td>' + data[count].indexKeywords + '</td></tr>';
 
             jQuery.getScript("css/js/tagPie.js").done(function () {
               console.log("yay, all good, do something *");

@@ -1,15 +1,25 @@
 package com.example.springboot;
 
+import com.opencsv.CSVReader;
 import org.json.JSONArray;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.ResourceUtils;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,13 +27,13 @@ import java.util.stream.Collectors;
 public class HelloController {
 
 	@RequestMapping("/index")
-	public String loginMessage(){
+	public String loginMessage() throws IOException {
 
-		ArrayList wordslist = new ArrayList();
+		/*ArrayList wordslist = new ArrayList();
 		wordslist.add("Jallal elhazzat");
 		wordslist.add("Ashley Snyder");
 
-		String json = (new JSONArray(wordslist)).toString();
+		String json = (new JSONArray(wordslist)).toString();*/
 
 
 
@@ -45,10 +55,17 @@ public class HelloController {
 
 	public List<PublisherInfo> fetchTheSearchData(SearchCriteria search){
 		List<PublisherInfo> data = new ArrayList<>();
+		String filename="papersPreprocessed.csv";
+		try {
+			data =this.readTheDataFromVCS(filename);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
-
-		String[][] pebPerYear = new String[5][2];
-		pebPerYear[0][0]="Year";
+		/*String[][] pebPerYear = new String[5][2];
+		pebPerYear[0][0]="year";
 		pebPerYear[0][1]="Publication";
 		//1
 		pebPerYear[1][0]="2014";
@@ -71,7 +88,7 @@ public class HelloController {
 		pebPerYear[4][1]="2500";
 
 
-		/*publication per category*/
+		//publication per category
 		//[['Task', 'Hours per Day'], ['Work', 11], ['Eat', 2], ['Commute', 2], ['Watch TV', 2], ['Sleep', 7]]
 		String[][] pebPerCategory = new String[6][2];
 		pebPerCategory[0][0]="Task";
@@ -95,7 +112,7 @@ public class HelloController {
 		//5
 		pebPerCategory[5][0]="SleepME";
 		pebPerCategory[5][1]="7";
-		/***************************************************/
+
 
 		//1st record
 		PublisherInfo item = new PublisherInfo();
@@ -203,8 +220,67 @@ public class HelloController {
 		data.add(item5);
 		data.add(item6);
 		data.add(item7);
-		data.add(item8);
+		data.add(item8);*/
 		return data;
+	}
+
+	public List<PublisherInfo> readTheDataFromVCS(String csvFile) throws IOException {
+
+		File file = ResourceUtils.getFile("classpath:" + csvFile);
+		CSVReader csvReader = new CSVReader(new InputStreamReader(new FileInputStream(file)));
+		List<PublisherInfo> publishRecords = new ArrayList<>();
+		while ((csvReader.readNext()) != null) {
+
+			String[] values =csvReader.readNext();
+			List<String> recordsString = Arrays.asList(values);
+			PublisherInfo publisherInfo = new PublisherInfo(
+					recordsString.get(0),
+					recordsString.get(1),
+					recordsString.get(2),
+					recordsString.get(3),
+					recordsString.get(4),
+					recordsString.get(5),
+					recordsString.get(6),
+					recordsString.get(7),
+					recordsString.get(8),
+					recordsString.get(9),
+					recordsString.get(10),
+					recordsString.get(11),
+					recordsString.get(12),
+					recordsString.get(13),
+					recordsString.get(14),
+					recordsString.get(15),
+					recordsString.get(16),
+					recordsString.get(17),
+					recordsString.get(18),
+					recordsString.get(19),
+					recordsString.get(20),
+					recordsString.get(21),
+					recordsString.get(22),
+					recordsString.get(23),
+					recordsString.get(24),
+					recordsString.get(25),
+					recordsString.get(26),
+					recordsString.get(27),
+					recordsString.get(28),
+					recordsString.get(29),
+					recordsString.get(30),
+					recordsString.get(31),
+					recordsString.get(32),
+					recordsString.get(33),
+					recordsString.get(34),
+					recordsString.get(35),
+					recordsString.get(36),
+					recordsString.get(37),
+					recordsString.get(38),
+					recordsString.get(39),
+					recordsString.get(40),
+					recordsString.get(41));
+			publishRecords.add(publisherInfo);
+		}
+
+
+return publishRecords;
 	}
 
 

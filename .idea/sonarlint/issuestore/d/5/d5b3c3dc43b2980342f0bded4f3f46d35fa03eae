@@ -1,25 +1,18 @@
 
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ó‡ÿàøÿÿÿÿ8’è™©þ-
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(áÎ…Ü8¯Š¾‡û-
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¼¥ØÃùÿÿÿÿ8˜ìä‡û-
-Tsquid:S1854"8Remove this useless assignment to local variable "json".(È†µË8æÈ©‡û-
-bsquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(¸ÄæI8æÈ©‡û-
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(™”Õˆþÿÿÿÿ8æÈ©‡û-
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¾š‹ž8Š÷ùˆû-
-¡%squid:RedundantThrowsDeclarationCheck"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(¸ÄæI8ªê‚©þ-
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(‹ÃêÐ8Îð½‡û-
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ïšìãúÿÿÿÿ8²¬Þ‰ü-
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(éÁ¡¢8ÕÝùˆû-
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ç£Ì÷úÿÿÿÿ8æÈ©‡û-
-Asquid:S1452"&Remove usage of generic wildcard type.(¸ÄæI8æÈ©‡û-
+gsquid:S1192"FDefine a constant instead of duplicating this literal "48108" 9 times.(žÊîîúÿÿÿÿ8ëÝøþ-
+bsquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(¸ÄæI8ëÝøþ-
+Isquid:S1172"-Remove this unused method parameter "search".(ÕåãŠ8«ÝÅñþ-
+Asquid:S1452"&Remove usage of generic wildcard type.(¸ÄæI8ëÝøþ-
 Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(åÇ›½üÿÿÿÿ8¦¡îíü-
-hsquid:S1192"GDefine a constant instead of duplicating this literal "Jallal" 9 times.(¥êÖúÿÿÿÿ8Ó‹Ó¨þ-
+squid:S106"9Replace this use of System.out or System.err by a logger.(åÇ›½üÿÿÿÿ8ëÝøþ-
 Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(âÊ¥ðüÿÿÿÿ8¦¡îíü-
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(åÇ›½üÿÿÿÿ8¦¡îíü-
+squid:S106"9Replace this use of System.out or System.err by a logger.(åÇ›½üÿÿÿÿ8ëÝøþ-
 Esquid:S1481")Remove this unused "json" local variable.(È†µË8æÈ©‡û-
-gsquid:S1192"KDefine a constant instead of duplicating this literal "Happy City" 9 times.(ã‰„ª8Ó‹Ó¨þ-
-gsquid:S1192"FDefine a constant instead of duplicating this literal "48108" 9 times.(žÊîîúÿÿÿÿ8Ó‹Ó¨þ-
-rsquid:S1192"QDefine a constant instead of duplicating this literal "123 Happy Street" 9 times.(ñàÜ®üÿÿÿÿ8Ó‹Ó¨þ-
+¡%squid:RedundantThrowsDeclarationCheck"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(¸ÄæI8ëÝøþ-
+hsquid:S1192"GDefine a constant instead of duplicating this literal "Jallal" 9 times.(¥êÖúÿÿÿÿ8ëÝøþ-
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(âÊ¥ðüÿÿÿÿ8ëÝøþ-
+gsquid:S1192"KDefine a constant instead of duplicating this literal "Happy City" 9 times.(ã‰„ª8ý”Âñþ-
+rsquid:S1192"QDefine a constant instead of duplicating this literal "123 Happy Street" 9 times.(ñàÜ®üÿÿÿÿ8ëÝøþ-
+Tsquid:S1854"8Remove this useless assignment to local variable "json".(È†µË8æÈ©‡û-
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÈØŠÂûÿÿÿÿ8Â»÷ùþ-
