@@ -18,7 +18,7 @@ function drawPieChart(values) {
     var datem = google.visualization.arrayToDataTable(values);
 
     var options = {
-      title: 'My Daily Activities'
+      title: 'Publication per Categories'
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));

@@ -21,6 +21,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 </head>
 
+
 <body>
     <div class="wrapper">
         <!-- Sidebar  -->
@@ -28,62 +29,61 @@
             <div class="sidebar-header">
                 <h3>Search Categories</h3>
             </div>
-
             <ul class="list-unstyled components">
                 <!--p>Dummy Heading</p-->
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Refactoring</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">Category 1</a>
+                            <a href="R1" class="homeSubmenu0" >Page 1</a>
                         </li>
                         <li>
-                            <a href="#">Category 2</a>
+                            <a href="R2" class="homeSubmenu0" >Page 2</a>
                         </li>
                         <li>
-                            <a href="#">Category 3</a>
+                            <a href="R3"  class="homeSubmenu0" >Page 3</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bugs</a>
+                    <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Debug</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu1">
                         <li>
-                            <a href="#">Page 1</a>
+                            <a href="D1" class="pageSubmenu1" >Page 1</a>
                         </li>
                         <li>
-                            <a href="#">Page 2</a>
+                            <a href="D2" class="pageSubmenu1" >Page 2</a>
                         </li>
                         <li>
-                            <a href="#">Page 3</a>
+                            <a href="D3"  class="pageSubmenu1" >Page 3</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Cats</a>
+                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Planing</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu2">
                         <li>
-                            <a href="#">Page 1</a>
+                            <a href="P1" class="pageSubmenu2" >Page 1</a>
                         </li>
                         <li>
-                            <a href="#">Page 2</a>
+                            <a href="P2" class="pageSubmenu2" >Page 2</a>
                         </li>
                         <li>
-                            <a href="#">Page 3</a>
+                            <a href="P3" class="pageSubmenu2" >Page 3</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Dogs</a>
+                    <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Testing</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu3">
                         <li>
-                            <a  href="categoty 1" id="category1">Category1</a>
+                            <a  href="T1" class="pageSubmenu3" id="category1">Category1</a>
                         </li>
                         <li>
-                            <a href="categoty 2" id="category2">Category2</a>
+                            <a href="T2" class="pageSubmenu3" id="category2">Category2</a>
                         </li>
                         <li>
-                            <a  href="categoty 3" id="category3">Category3</a>
+                            <a  href="T3" class="pageSubmenu3" id="category3">Category3</a>
                         </li>
                     </ul>
                 </li>
@@ -139,17 +139,24 @@
             <!--End of search section-->
             <div class="line"></div>
             <!-- Table start-->
+            <!-- Table style start -->
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <!--Table style end-->
             <div class="table-wrapper">
                     <div class="table-title">
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="show-entries">
                                     <span>Show</span>
-                                    <select>
+                                    <select class="listOdRecords" id="myselect">
+                                        <option>3</option>
                                         <option>5</option>
                                         <option>10</option>
                                         <option>15</option>
-                                        <option>20</option>
                                     </select>
                                     <span>entries</span>
                                 </div>
@@ -288,15 +295,15 @@
                         <br/>
                     </table>
                     <div class="clearfix">
-                        <div class="hint-text">Showing <b>7</b> out of <b>25</b> entries</div>
+                        <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
                         <ul class="pagination">
                             <li class="page-item disabled"><a href="#">Previous</a></li>
-                            <li class="page-item"><a href="#" class="page-link">1</a></li>
-                            <li class="page-item"><a href="#" class="page-link">2</a></li>
-                            <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                            <li class="page-item"><a href="#" class="page-link">4</a></li>
-                            <li class="page-item"><a href="#" class="page-link">5</a></li>
-                            <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                            <li class="page-item active"><a href="1" class="page-link">1</a></li>
+                            <li class="page-item"><a href="2" class="page-link">2</a></li>
+                            <li class="page-item "><a href="3" class="page-link">3</a></li>
+                            <li class="page-item"><a href="4" class="page-link">4</a></li>
+                            <li class="page-item"><a href="5" class="page-link">5</a></li>
+                            <li class="page-item"><a href="next" class="page-link">Next</a></li>
                         </ul>
                     </div>
                 </div>
@@ -393,15 +400,12 @@
       cache: false,
       timeout: 600000,
       success: function (data) {
-        console.log("***********************************");
-        console.log("I GOT A RESPONSE ");
-        console.log(data);
-        console.log("***********************************");
         $('#total_records').text(data.length);
         var html = '';
         if (data.length > 0) {
           for (var count = 0; count < data.length; count++) {
             html += '<tr>';
+            html += '<td>' + count + '</td>';
             html += '<td>' + data[count].customerName + '</td>';
             html += '<td>' + data[count].gender + '</td>';
             html += '<td>' + data[count].address + '</td>';
@@ -416,8 +420,6 @@
               console.log("boo first chart failed , fall back to something else");
             });
           }
-
-
           jQuery.getScript("css/js/pubPerYearGraph.js").done(function () {
             console.log("yay, all good, do something *");
             drawChart(data[0].publicationsPerYear);
@@ -429,6 +431,11 @@
           html = '<tr><td colspan="5">No Data Found</td></tr>';
         }
         $('tbody').html(html);
+
+        //get the number of pages to display
+        var numerOfRecords = $( "#myselect option:selected" ).text();
+        //show only certain number
+        $("table > tbody > tr").hide().slice(0, numerOfRecords).show();
       },
       error: function (e) {
 
@@ -445,30 +452,75 @@
   }
 
   $('#search').click(function () {
-    //var query = $('#tags').val();
     var search = {};
     search["search"] = $("#exampleFormControlSelect1").val();
     search["authorName"] = $('#tags').val();
     fire_ajax_submit(search);
   });
 
-  $('#category1').click(function (event) {
-    event.preventDefault();
-    var search = {};
-    search["category"] = "category1";
-    fire_ajax_submit(search);
+  $(function() {
+    $(".homeSubmenu0").on("click", function(evt) {
+      event.preventDefault();
+      var search = {};
+      var clicked_button = $(this);
+      search["category"] = clicked_button.attr("href");
+      fire_ajax_submit(search);
+    });
   });
-  $('#category2').click(function (event) {
-    event.preventDefault();
-    var search = {};
-    search["category"] = "category2";
-    fire_ajax_submit(search);
+  $(function() {
+    $(".pageSubmenu1").on("click", function(evt) {
+      event.preventDefault();
+      var search = {};
+      var clicked_button = $(this);
+      search["category"] = clicked_button.attr("href");
+      fire_ajax_submit(search);
+    });
   });
-  $('#category3').click(function (event) {
+  $(function() {
+    $(".pageSubmenu2").on("click", function(evt) {
+      event.preventDefault();
+      var search = {};
+      var clicked_button = $(this);
+      search["category"] = clicked_button.attr("href");
+      fire_ajax_submit(search);
+    });
+  });
+  $(function() {
+    $(".pageSubmenu3").on("click", function(evt) {
+      event.preventDefault();
+      var search = {};
+      var clicked_button = $(this);
+      search["category"] = clicked_button.attr("href");
+      fire_ajax_submit(search);
+    });
+  });
 
-    event.preventDefault();
-    var search = {};
-    search["category"] = "category3";
-    fire_ajax_submit(search);
+  $(function() {
+    $(".page-link").on("click", function(evt) {
+      event.preventDefault();
+
+      //get the number of pages to display
+      var numerOfRecords= $( "#myselect option:selected" ).text();
+
+      var index = $(this);
+      var index_value=index.attr("href");
+      var upper_limit=index_value*numerOfRecords;
+      var lower_limit=upper_limit-numerOfRecords;
+      $("table > tbody > tr").hide().slice(lower_limit, upper_limit).show();
+      //update the active
+      $('li > a').click(function() {
+        $('li').removeClass();
+        $(this).parent().addClass('page-item active');
+      });
+    });
   });
+
+
+  $(document).ready(function(){
+    $("select.listOdRecords").change(function(){
+      var selectedCountry = $(this).children("option:selected").val();
+      $("table > tbody > tr").hide().slice(0, selectedCountry).show();
+    });
+  });
+
 </script>

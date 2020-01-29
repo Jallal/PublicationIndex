@@ -4,16 +4,37 @@ import javax.validation.constraints.NotBlank;
 
 public class SearchCriteria {
 
-    //@NotBlank(message = "username can't empty!")
-    //String username;
 
-    /*public String getUsername() {
-        return username;
+    private String authorName;
+    private String search;
+    private String category;
+    private int pageShowing;
+    private int nuberOfRecords;
+    private Tags tags;
+
+    public int getPageShowing() {
+        return pageShowing;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }*/
+    public void setPageShowing(int pageShowing) {
+        this.pageShowing = pageShowing;
+    }
+
+    public int getNuberOfRecords() {
+        return nuberOfRecords;
+    }
+
+    public void setNuberOfRecords(int nuberOfRecords) {
+        this.nuberOfRecords = nuberOfRecords;
+    }
+
+    public Tags getTags() {
+        return tags;
+    }
+
+    public void setTags(Tags tags) {
+        this.tags = tags;
+    }
 
     public String getAuthorName() {
         return authorName;
@@ -32,6 +53,7 @@ public class SearchCriteria {
     }
 
     public String getCategory() {
+
         return category;
     }
 
@@ -45,12 +67,9 @@ public class SearchCriteria {
                 "authorName='" + authorName + '\'' +
                 ", search='" + search + '\'' +
                 ", category='" + category + '\'' +
+                ", pageShowing=" + pageShowing +
+                ", nuberOfRecords=" + nuberOfRecords +
+                ", tags=" + tags +
                 '}';
     }
-
-    private String authorName;
-    private String search;
-    private String category;
-
-
 }
