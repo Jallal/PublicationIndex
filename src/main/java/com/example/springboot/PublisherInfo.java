@@ -1,5 +1,9 @@
 package com.example.springboot;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class PublisherInfo {
 
 
@@ -114,6 +118,13 @@ public class PublisherInfo {
 
     public String getAuthorKeywords() {
         return authorKeywords;
+    }
+
+    public List<String> getAuthorKeywordsAsList() {
+        List<String> keyWords = new ArrayList<>();
+        String[] split = authorKeywords.split(";");
+        keyWords= Arrays.asList(split);
+        return keyWords;
     }
 
     public String getIndexKeywords() {

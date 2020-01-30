@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc1c4ca9-7435-446a-95f8-fbeb263d4b61" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/e/7eaa6be24833c56baadaeba9221bc69fffcd29a6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/e/7eaa6be24833c56baadaeba9221bc69fffcd29a6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/5/d5b3c3dc43b2980342f0bded4f3f46d35fa03eae" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/5/d5b3c3dc43b2980342f0bded4f3f46d35fa03eae" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/PublisherInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/PublisherInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/HelloController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/springboot/PublisherInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springboot/PublisherInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring-boot-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-boot-0.0.1-SNAPSHOT.jar" afterDir="false" />
@@ -44,8 +44,8 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="882">
-              <caret line="416" column="74" lean-forward="true" selection-start-line="416" selection-start-column="74" selection-end-line="416" selection-end-column="74" />
+            <state relative-caret-position="9568">
+              <caret line="416" column="74" selection-start-line="416" selection-start-column="74" selection-end-line="416" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -53,10 +53,11 @@
       <file leaf-file-name="HelloController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/HelloController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="-4052">
+              <caret line="115" column="32" lean-forward="true" selection-start-line="115" selection-start-column="32" selection-end-line="115" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#readTheDataFromVCS#0;class#HelloController#0" />
               </folding>
             </state>
           </provider>
@@ -66,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/js/pubPerYearGraph.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="368">
-              <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+              <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -83,11 +84,12 @@
       <file leaf-file-name="PublisherInfo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/PublisherInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-124">
-              <caret line="261" column="16" lean-forward="true" selection-start-line="261" selection-start-column="16" selection-end-line="261" selection-end-column="16" />
+            <state relative-caret-position="247">
+              <caret line="125" column="38" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
               <folding>
-                <element signature="e#2687#2688#0" expanded="true" />
-                <element signature="e#2714#2715#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#3628#3629#0" expanded="true" />
+                <element signature="e#3665#3666#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -143,8 +145,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/example/springboot/SearchCriteria.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/styleIndex.css" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/springboot/PublisherInfo.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/springboot/PublisherInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/springboot/HelloController.java" />
       </list>
     </option>
@@ -183,9 +185,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -394,11 +396,13 @@
       <workItem from="1580248903452" duration="12443000" />
       <workItem from="1580309532961" duration="13051000" />
       <workItem from="1580343775330" duration="11942000" />
+      <workItem from="1580396780166" duration="625000" />
+      <workItem from="1580404808283" duration="3118000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141296000" />
+    <option name="totallyTimeSpent" value="145039000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1849" height="866" extended-state="6" />
@@ -424,16 +428,16 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25347415" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15675375" />
       <window_info anchor="right" id="Bean Validation" order="4" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="bottom" id="SonarLint" order="7" />
       <window_info anchor="right" id="Gradle" order="4" weight="0.32962757" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="8" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -711,10 +715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="8" selection-end-column="28" />
-          <folding>
-            <element signature="e#363#364#0" expanded="true" />
-            <element signature="e#399#400#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -722,9 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="667">
           <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
-          <folding>
-            <element signature="e#650#651#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -760,10 +757,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="55" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="e#401#402#0" expanded="true" />
-            <element signature="e#447#448#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -784,7 +777,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/js/pubPerYearGraph.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -795,30 +788,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/PublisherInfo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-124">
-          <caret line="261" column="16" lean-forward="true" selection-start-line="261" selection-start-column="16" selection-end-line="261" selection-end-column="16" />
-          <folding>
-            <element signature="e#2687#2688#0" expanded="true" />
-            <element signature="e#2714#2715#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="9568">
+          <caret line="416" column="74" selection-start-line="416" selection-start-column="74" selection-end-line="416" selection-end-column="74" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/PublisherInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="416" column="74" lean-forward="true" selection-start-line="416" selection-start-column="74" selection-end-line="416" selection-end-column="74" />
+        <state relative-caret-position="247">
+          <caret line="125" column="38" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3628#3629#0" expanded="true" />
+            <element signature="e#3665#3666#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/HelloController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="-4052">
+          <caret line="115" column="32" lean-forward="true" selection-start-line="115" selection-start-column="32" selection-end-line="115" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#readTheDataFromVCS#0;class#HelloController#0" />
           </folding>
         </state>
       </provider>

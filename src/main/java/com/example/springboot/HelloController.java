@@ -36,7 +36,6 @@ public class HelloController {
 
 	@RequestMapping("/index")
 	public String loginMessage() throws IOException {
-
 		return "index";
 	}
 
@@ -68,6 +67,40 @@ public String[][] getTheGraphData(List<PublisherInfo> data){
 
 	return pebPerYear;
 }
+
+
+	public String[][] getTheChartData(List<PublisherInfo> newdata){
+
+		List<String> allCategories = new ArrayList<>();
+		for(PublisherInfo element : newdata){
+			for(String category : element.getAuthorKeywordsAsList()){
+				allCategories.add(category.trim());
+			}
+		}
+
+		Map<String, Long> categoriesMap = allCategories.stream().filter(e->e != null && !e.isEmpty()).collect(Collectors.groupingBy(p -> p, Collectors.counting()));
+		int arraySize= categoriesMap.size();
+		String[][] pebPerCategory = new String[arraySize][2];
+		pebPerCategory[0][0]="Task";
+		pebPerCategory[0][1]="Hours per Day";
+		int count = 1;
+		for (Map.Entry<String, Long> entry : categoriesMap.entrySet()) {
+			if(count<arraySize) {
+				pebPerCategory[count][0] = entry.getKey();
+				pebPerCategory[count][1] = String.valueOf(entry.getValue());
+			}
+			count++;
+
+		}
+
+		return pebPerCategory;
+	}
+
+
+
+
+
+
 
 	public List<PublisherInfo> filterByTags(List<PublisherInfo> data, String filter){
 
@@ -320,11 +353,18 @@ return publishRecords;
 		/*if(null!=search.getCategory()){
 			data = filterByTags(data,search.getCategory());
 		}*/
+
+		//put the graph data
 		String[][] pebPerYear = getTheGraphData(data);
 		data.get(0).setPublicationsPerYear(pebPerYear);
+
+		//put the pie data
+		String[][] publicationsPerCategory = getTheChartData(data);
+		data.get(0).setPublicationsPerCategory(publicationsPerCategory);
+
 		System.out.print("***************************************************\n");
-		for(int i=0;i<19;i++) {
-			System.out.print(data.get(0).getPublicationsPerYear()[i][0]+":::::::::"+data.get(0).getPublicationsPerYear()[i][1]+"\n");
+		for(int i=0;i<data.get(0).getPublicationsPerCategory().length;i++) {
+			System.out.print(data.get(0).getPublicationsPerCategory()[i][0]+":::::::::"+data.get(0).getPublicationsPerCategory()[i][1]+"\n");
 		}
 		System.out.print("***************************************************\n");
 
