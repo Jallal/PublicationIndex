@@ -56,7 +56,7 @@ public class PublisherInfo {
         return title;
     }
 
-    public String getYear() {
+    public  String getYear() {
         return year;
     }
 
@@ -262,8 +262,8 @@ public class PublisherInfo {
     String City;
     String PostalCode;
     String Country;
-    String[][] publicationsPerYear = new String[5][2];
-    String[][] publicationsPerCategory= new String[6][2];
+    String[][] publicationsPerYear = new String[19][2];
+    String[][] publicationsPerCategory= new String[19][2];
     /* NEED TO BE REMOVED END*/
     public String[][] getPublicationsPerCategory() {
         return publicationsPerCategory;

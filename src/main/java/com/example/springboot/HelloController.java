@@ -20,8 +20,16 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static java.util.Map.Entry.comparingByKey;
+import static java.util.stream.Collectors.toMap;
 
 @Controller
 public class HelloController {
@@ -29,24 +37,37 @@ public class HelloController {
 	@RequestMapping("/index")
 	public String loginMessage() throws IOException {
 
-		/*ArrayList wordslist = new ArrayList();
-		wordslist.add("Jallal elhazzat");
-		wordslist.add("Ashley Snyder");
-
-		String json = (new JSONArray(wordslist)).toString();*/
-
-
-
 		return "index";
 	}
 
-	/*public List<PublisherInfo> filterByTabelPage(List<PublisherInfo> data, int pageNumer, int numberOfRecords){
 
-		//return data.stream().filter(i->i.getCountry().equals(filter)).collect(Collectors.toList());
+public String[][] getTheGraphData(List<PublisherInfo> data){
 
-		data.stream().
-	}*/
+	Map<String, Long> counters = data.stream().collect(Collectors.groupingBy(p -> p.getYear(), Collectors.counting()));
+	Map<String, Long>  countersSorted = counters
+			.entrySet()
+			.stream()
+			.sorted(comparingByKey())
+			.collect(
+					toMap(Map.Entry::getKey, Map.Entry::getValue,
+							(e1, e2) -> e2, LinkedHashMap::new));
 
+	int arraySize= countersSorted.size();
+	String[][] pebPerYear = new String[arraySize][2];
+	pebPerYear[0][0]="year";
+	pebPerYear[0][1]="Publication";
+	int count = 1;
+	for (Map.Entry<String, Long> entry : countersSorted.entrySet()) {
+		if(count<arraySize) {
+			pebPerYear[count][0] = entry.getKey();
+			pebPerYear[count][1] = String.valueOf(entry.getValue());
+		}
+		count++;
+
+	}
+
+	return pebPerYear;
+}
 
 	public List<PublisherInfo> filterByTags(List<PublisherInfo> data, String filter){
 
@@ -64,6 +85,8 @@ public class HelloController {
 			e.printStackTrace();
 		}
 
+
+		//data.get(0).setPublicationsPerCategory(pebPerYear);
 		/*String[][] pebPerYear = new String[5][2];
 		pebPerYear[0][0]="year";
 		pebPerYear[0][1]="Publication";
@@ -282,8 +305,6 @@ public class HelloController {
 
 return publishRecords;
 	}
-
-
 	@PostMapping("/api/search")
 	public ResponseEntity<?> getSearchResultViaAjax(@Valid @RequestBody SearchCriteria search, Errors errors) throws Exception {
 
@@ -291,9 +312,22 @@ return publishRecords;
 		System.out.print(search.toString());
 		System.out.print("******************************************************\n");
 		List<PublisherInfo> data = fetchTheSearchData(search);
-		if(null!=search.getCategory()){
+
+		data.sort(
+				Comparator.comparing(PublisherInfo::getYear).thenComparing(PublisherInfo::getAuthors).reversed()
+		);
+
+		/*if(null!=search.getCategory()){
 			data = filterByTags(data,search.getCategory());
+		}*/
+		String[][] pebPerYear = getTheGraphData(data);
+		data.get(0).setPublicationsPerYear(pebPerYear);
+		System.out.print("***************************************************\n");
+		for(int i=0;i<19;i++) {
+			System.out.print(data.get(0).getPublicationsPerYear()[i][0]+":::::::::"+data.get(0).getPublicationsPerYear()[i][1]+"\n");
 		}
+		System.out.print("***************************************************\n");
+
 		AjaxResponseBody result = new AjaxResponseBody();
 		result.setMsg("success");
 		result.setResult(data);

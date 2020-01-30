@@ -153,10 +153,10 @@
                                 <div class="show-entries">
                                     <span>Show</span>
                                     <select class="listOdRecords" id="myselect">
-                                        <option>3</option>
                                         <option>5</option>
                                         <option>10</option>
-                                        <option>15</option>
+                                        <option>20</option>
+                                        <option>30</option>
                                     </select>
                                     <span>entries</span>
                                 </div>
@@ -175,7 +175,7 @@
                             <th>Publication year <i class="fa fa-sort"></i></th>
                             <th>Document Type</th>
                             <th>Publisher <i class="fa fa-sort"></i></th>
-                            <th>Index Keywords</th>
+                            <th>Keywords</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -411,21 +411,27 @@
             html += '<td>' + data[count].year + '</td>';
             html += '<td>' + data[count].documentType + '</td>';
             html += '<td>' + data[count].publisher + '</td>';
-            html += '<td>' + data[count].indexKeywords + '</td></tr>';
+            html += '<td>' + data[count].authorKeywords + '</td></tr>';
 
-            jQuery.getScript("css/js/tagPie.js").done(function () {
-              console.log("yay, all good, do something *");
-              drawPieChart(data[0].publicationsPerCategory);
-            }).fail(function () {
-              console.log("boo first chart failed , fall back to something else");
-            });
           }
           jQuery.getScript("css/js/pubPerYearGraph.js").done(function () {
             console.log("yay, all good, do something *");
+            console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+            console.log("8888888"+data[0].publicationsPerYear);
+            console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+
             drawChart(data[0].publicationsPerYear);
           }).fail(function () {
             console.log("boo first chart failed , fall back to something else");
           });
+
+          jQuery.getScript("css/js/tagPie.js").done(function () {
+            console.log("yay, all good, do something *");
+            drawPieChart(data[0].publicationsPerCategory);
+          }).fail(function () {
+            console.log("boo first chart failed , fall back to something else");
+          });
+
         }
         else {
           html = '<tr><td colspan="5">No Data Found</td></tr>';
