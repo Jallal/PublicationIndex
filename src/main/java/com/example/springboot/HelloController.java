@@ -69,7 +69,7 @@ public String[][] getTheGraphData(List<PublisherInfo> data){
 }
 
 
-	public String[][] getTheChartData(List<PublisherInfo> newdata){
+public String[][] getTheChartData(List<PublisherInfo> newdata){
 
 		List<String> allCategories = new ArrayList<>();
 		for(PublisherInfo element : newdata){
@@ -96,15 +96,31 @@ public String[][] getTheGraphData(List<PublisherInfo> data){
 		return pebPerCategory;
 	}
 
+	public List<PublisherInfo> searchByPublicationTitle(List<PublisherInfo> data, String filter) {
+
+		return data.stream().filter(e -> e != null).filter(i -> i.getTitle().toLowerCase().contains(filter.toLowerCase())).collect(Collectors.toList());
+	}
 
 
 
+public List<PublisherInfo> searchByAuthorName(List<PublisherInfo> data, String filter){
 
+		 return data.stream().filter(e->e != null).filter(i->i.getAuthorNameAsAsList().stream().anyMatch(e->e.toLowerCase().contains(filter.toLowerCase()))).collect(Collectors.toList());
+	}
 
+	public List<PublisherInfo> searchByTagName(List<PublisherInfo> data, String filter){
+
+		return data.stream().filter(e->e != null).filter(i->i.getAuthorKeywordsAsList().stream().anyMatch(e->e.toLowerCase().contains(filter.toLowerCase()))).collect(Collectors.toList());
+	}
+
+	public List<PublisherInfo> searchByJournalName(List<PublisherInfo> data, String filter){
+
+		return data.stream().filter(e->e != null).filter(i->i.getPublisher().toLowerCase().contains(filter.toLowerCase())).collect(Collectors.toList());
+	}
 
 	public List<PublisherInfo> filterByTags(List<PublisherInfo> data, String filter){
-
-		return data.stream().filter(i->i.getCountry().equals(filter)).collect(Collectors.toList());
+		//return data.stream().filter(i->i.getCountry().equals(filter)).collect(Collectors.toList());
+		return data.stream().filter(i->i.getAuthorKeywordsAsList().stream().anyMatch(e->e.toLowerCase().contains(filter.toLowerCase()))).collect(Collectors.toList());
 	}
 
 	public List<PublisherInfo> fetchTheSearchData(SearchCriteria search){
@@ -350,9 +366,21 @@ return publishRecords;
 				Comparator.comparing(PublisherInfo::getYear).thenComparing(PublisherInfo::getAuthors).reversed()
 		);
 
-		/*if(null!=search.getCategory()){
+		if(null!=search.getAuthorName()&& search.getSearch().toLowerCase().equals("name")){
+
+			data = searchByAuthorName(data,search.getAuthorName());
+		}else if(null!=search.getAuthorName()&& search.getSearch().toLowerCase().equals("category")){
+
+			data = searchByTagName(data,search.getAuthorName());
+		}else if(null!=search.getAuthorName()&& search.getSearch().toLowerCase().equals("journal")){
+			data = searchByJournalName(data,search.getAuthorName());
+		}else if(null!=search.getAuthorName()&& search.getSearch().toLowerCase().equals("title")){
+			data = searchByPublicationTitle(data,search.getAuthorName());
+		}
+
+		if(null!=search.getCategory()){
 			data = filterByTags(data,search.getCategory());
-		}*/
+		}
 
 		//put the graph data
 		String[][] pebPerYear = getTheGraphData(data);

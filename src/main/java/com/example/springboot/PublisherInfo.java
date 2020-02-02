@@ -127,6 +127,13 @@ public class PublisherInfo {
         return keyWords;
     }
 
+    public List<String> getAuthorNameAsAsList() {
+        List<String>  authorsNames = new ArrayList<>();
+        String[] split = this.getAuthors().split(",");
+        authorsNames= Arrays.asList(split);
+        return  authorsNames;
+    }
+
     public String getIndexKeywords() {
         return indexKeywords;
     }

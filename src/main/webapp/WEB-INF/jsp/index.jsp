@@ -35,13 +35,13 @@
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Refactoring</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="R1" class="homeSubmenu0" >Page 1</a>
+                            <a href="Refactoring" class="homeSubmenu0" >Refactoring</a>
                         </li>
                         <li>
-                            <a href="R2" class="homeSubmenu0" >Page 2</a>
+                            <a href="Maintenance" class="homeSubmenu0" >Software Maintenance</a>
                         </li>
                         <li>
-                            <a href="R3"  class="homeSubmenu0" >Page 3</a>
+                            <a href="evolution"  class="homeSubmenu0" >Software evolution</a>
                         </li>
                     </ul>
                 </li>
@@ -120,7 +120,7 @@
                                             <option>Name</option>
                                             <option>Journal</option>
                                             <option>Category</option>
-                                            <option>Any</option>
+                                            <option>Title</option>
                                         </select>
                                     </div>
                                     <div class="col-lg-6 col-md-3 col-sm-12 p-0">
@@ -416,10 +416,6 @@
           }
           jQuery.getScript("css/js/pubPerYearGraph.js").done(function () {
             console.log("yay, all good, do something *");
-            console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-            console.log("8888888"+data[0].publicationsPerYear);
-            console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-
             drawChart(data[0].publicationsPerYear);
           }).fail(function () {
             console.log("boo first chart failed , fall back to something else");
@@ -432,8 +428,7 @@
             console.log("boo first chart failed , fall back to something else");
           });
 
-        }
-        else {
+        } else {
           html = '<tr><td colspan="5">No Data Found</td></tr>';
         }
         $('tbody').html(html);
