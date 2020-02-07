@@ -18,7 +18,12 @@ function drawPieChart(values) {
     var datem = google.visualization.arrayToDataTable(values);
 
     var options = {
-      title: 'Publication per Categories'
+      title: 'Publication per Categories',
+      slices: {  4: {offset: 0.2},
+        12: {offset: 0.3},
+        14: {offset: 0.4},
+        15: {offset: 0.5},
+      }
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));

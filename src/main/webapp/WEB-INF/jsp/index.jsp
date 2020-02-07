@@ -32,58 +32,142 @@
             <ul class="list-unstyled components">
                 <!--p>Dummy Heading</p-->
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Refactoring</a>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Target of Refactoring</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="Refactoring" class="homeSubmenu0" >Refactoring</a>
+                            <a href="code" class="homeSubmenu0" >Code</a>
                         </li>
                         <li>
-                            <a href="Maintenance" class="homeSubmenu0" >Software Maintenance</a>
+                            <a href="Architecture" class="homeSubmenu0" >Architecture</a>
                         </li>
                         <li>
-                            <a href="evolution"  class="homeSubmenu0" >Software evolution</a>
+                            <a href="UI"  class="homeSubmenu0" >UI</a>
+                        </li>
+                        <li>
+                            <a href="Model"  class="homeSubmenu0" >Model</a>
+                        </li>
+                        <li>
+                            <a href="Database"  class="homeSubmenu0" >Database</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Debug</a>
+                    <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Refactoring Life Cycle</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu1">
                         <li>
-                            <a href="D1" class="pageSubmenu1" >Page 1</a>
+                            <a href="Recommendation" class="homeSubmenu0" >Recommendation</a>
                         </li>
                         <li>
-                            <a href="D2" class="pageSubmenu1" >Page 2</a>
+                            <a href="Detection" class="homeSubmenu0" >Detection</a>
                         </li>
                         <li>
-                            <a href="D3"  class="pageSubmenu1" >Page 3</a>
+                            <a href="Testing"  class="homeSubmenu0" >Testing</a>
+                        </li>
+                        <li>
+                            <a href="Automation"  class="homeSubmenu0" >Automation</a>
+                        </li>
+                        <li>
+                            <a href="Prioritization"  class="homeSubmenu0" >Prioritization</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Planing</a>
+                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Programming Languages</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu2">
                         <li>
-                            <a href="P1" class="pageSubmenu2" >Page 1</a>
+                            <a href="Java" class="homeSubmenu0" >Java</a>
                         </li>
                         <li>
-                            <a href="P2" class="pageSubmenu2" >Page 2</a>
+                            <a href="C/C++" class="homeSubmenu0" >C/C++</a>
                         </li>
                         <li>
-                            <a href="P3" class="pageSubmenu2" >Page 3</a>
+                            <a href=">C#"  class="homeSubmenu0" >C#</a>
+                        </li>
+                        <li>
+                            <a href="Python"  class="homeSubmenu0" >Python</a>
+                        </li>
+                        <li>
+                            <a href="PHP"  class="homeSubmenu0" >PHP</a>
+                        </li>
+                        <li>
+                            <a href="COBOL"  class="homeSubmenu0" >COBOL</a>
+                        </li>
+                        <li>
+                            <a href="CSS"  class="homeSubmenu0" >CSS</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Testing</a>
+                    <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Refactoring Objectives</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu3">
                         <li>
-                            <a  href="T1" class="pageSubmenu3" id="category1">Category1</a>
+                            <a href="External Quality" class="homeSubmenu0" >External Quality</a>
                         </li>
                         <li>
-                            <a href="T2" class="pageSubmenu3" id="category2">Category2</a>
+                            <a href="Internal Quality" class="homeSubmenu0" >Internal Quality</a>
                         </li>
                         <li>
-                            <a  href="T3" class="pageSubmenu3" id="category3">Category3</a>
+                            <a href="Performance/Parallelism"  class="homeSubmenu0" >Performance/Parallelism</a>
+                        </li>
+                        <li>
+                            <a href="Migration"  class="homeSubmenu0" >Migration</a>
+                        </li>
+                        <li>
+                            <a href="Security"  class="homeSubmenu0" >Security</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Refactoring Evaluation</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu4">
+                        <li>
+                            <a href="Industrial" class="homeSubmenu0" >Industrial</a>
+                        </li>
+                        <li>
+                            <a href="Open Source" class="homeSubmenu0" >Open Source</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#pageSubmenu5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Fields</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu5">
+                        <li>
+                            <a href="Data mining" class="homeSubmenu0" >Data mining</a>
+                        </li>
+                        <li>
+                            <a href="Search base<" class="homeSubmenu0" >Search base</a>
+                        </li>
+                        <li>
+                            <a href="Formal methods" class="homeSubmenu0" >Formal methods</a>
+                        </li>
+                        <li>
+                            <a href="Fuzzy logic" class="homeSubmenu0" >Fuzzy logic</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="#pageSubmenu6" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Applied Paradigm</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu6">
+                        <li>
+                            <a href="OO Design" class="homeSubmenu0" >OO Design</a>
+                        </li>
+                        <li>
+                            <a href="Web service/Cloud" class="homeSubmenu0" >Web service/Cloud</a>
+                        </li>
+                        <li>
+                            <a href="Mobile Aps" class="homeSubmenu0" >Mobile Aps</a>
+                        </li>
+                        <li>
+                            <a href="Model Driven" class="homeSubmenu0" >Model Driven</a>
+                        </li>
+                        <li>
+                            <a href="Aspect Oriented" class="homeSubmenu0" >Aspect Oriented</a>
+                        </li>
+                        <li>
+                            <a href="Software Documentation" class="homeSubmenu0" >Software Documentation</a>
                         </li>
                     </ul>
                 </li>
@@ -403,7 +487,19 @@
         $('#total_records').text(data.length);
         var html = '';
         if (data.length > 0) {
+
           for (var count = 0; count < data.length; count++) {
+            var tags= JSON.stringify(data[count].listOfTages);
+            var obj = JSON.parse(tags);
+            var refLife1=obj.RefactoringLifeCycle;
+            var refLife2=refLife1.join(" ");
+
+            var targetRef1=obj.TargetOfRefactoring;
+            var targetRef2=targetRef1.join(" ");
+
+            var progLang1=obj.ProgrammingLanguages;
+            var progLang2=progLang1.join(" ");
+
             html += '<tr>';
             html += '<td>' + count + '</td>';
             html += '<td>' + data[count].authors + '</td>';
@@ -411,8 +507,9 @@
             html += '<td>' + data[count].year + '</td>';
             html += '<td>' + data[count].documentType + '</td>';
             html += '<td>' + data[count].publisher + '</td>';
-            html += '<td>' + data[count].authorKeywords + '</td></tr>';
-
+            html += '<td class="text-info">'+refLife2+'&nbsp; ' +
+              '<span class="text-warning">'+targetRef2+'&nbsp;' +
+              '</span><span class="text-danger">'+progLang2+'&nbsp;</span>'+ '</td></tr>';
           }
           jQuery.getScript("css/js/pubPerYearGraph.js").done(function () {
             console.log("yay, all good, do something *");

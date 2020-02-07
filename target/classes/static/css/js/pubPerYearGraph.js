@@ -9,11 +9,13 @@ function drawChart(value) {
     console.log("*****************************I'm the GRAPH and I WAS CALLED*********************************");
     console.log(value);
     console.log("**************************************************************");
+    for (var i = 1; i < value.length; i++) {
+      value[i][1]= parseInt(value[i][1], 10);
+    }
     var data = google.visualization.arrayToDataTable(value);
     var options = {
       chart: {
-        title: 'Publication per year',
-        subtitle: 'Publications from 2010-2018',
+        title: 'Publication per year'
       }
     };
 

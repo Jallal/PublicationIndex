@@ -2,55 +2,14 @@ package com.example.springboot;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PublisherInfo {
 
 
-    public PublisherInfo(String authors, String title, String year, String sourceTitle, String volume, String issue, String artNo, String pageStart, String pageEnd, String pageCount, String citedByBy, String DOI, String link, String affiliations, String authorsWithAffiliations, String anBbstract, String author_Keywords, String indexKeywords, String bothKeywords, String correspondenceAddress, String editors, String publisherAddress, String conferenceName, String conferenceLocation, String conferenceDate, String publisher, String ISSN, String ISBN, String CODEN, String pubMedID, String languageOfOriginalDocument, String abbreviatedSourceTitle, String documentType, String source, String subject, String EID, String duplicatedIn, String country, String emailHost, String institution, String institutionWithCountry, String authorFull) {
-        this.authors = authors;
-        this.title = title;
-        this.year = year;
-        this.sourceTitle = sourceTitle;
-        this.volume = volume;
-        this.issue = issue;
-        this.artNo = artNo;
-        this.pageStart = pageStart;
-        this.pageEnd = pageEnd;
-        this.pageCount = pageCount;
-        this.citedByBy = citedByBy;
-        this.DOI = DOI;
-        this.link = link;
-        this.affiliations = affiliations;
-        this.authorsWithAffiliations = authorsWithAffiliations;
-        this.bbstract = anBbstract;
-        this.authorKeywords = author_Keywords;
-        this.indexKeywords = indexKeywords;
-        this.bothKeywords = bothKeywords;
-        this.correspondenceAddress = correspondenceAddress;
-        this.editors = editors;
-        this.publisherAddress = publisherAddress;
-        this.conferenceName = conferenceName;
-        this.conferenceLocation = conferenceLocation;
-        this.conferenceDate = conferenceDate;
-        this.publisher = publisher;
-        this.ISSN = ISSN;
-        this.ISBN = ISBN;
-        this.CODEN = CODEN;
-        this.pubMedID = pubMedID;
-        this.languageOfOriginalDocument = languageOfOriginalDocument;
-        this.abbreviatedSourceTitle = abbreviatedSourceTitle;
-        this.documentType = documentType;
-        this.source=source;
-        this.subject = subject;
-        this.EID = EID;
-        this.duplicatedIn = duplicatedIn;
-        this.country = country;
-        this.emailHost = emailHost;
-        this.institution = institution;
-        this.institutionWithCountry = institutionWithCountry;
-        this.authorFull = authorFull;
-    }
+    public Map<String, List<String>> listOfTages;
 
     public String getAuthors() {
         return authors;
@@ -269,9 +228,62 @@ public class PublisherInfo {
     String institutionWithCountry;
     String authorFull;
 
+    public PublisherInfo(String authors, String title, String year, String sourceTitle, String volume, String issue, String artNo, String pageStart, String pageEnd, String pageCount, String citedByBy, String DOI, String link, String affiliations, String authorsWithAffiliations, String anBbstract, String author_Keywords, String indexKeywords, String bothKeywords, String correspondenceAddress, String editors, String publisherAddress, String conferenceName, String conferenceLocation, String conferenceDate, String publisher, String ISSN, String ISBN, String CODEN, String pubMedID, String languageOfOriginalDocument, String abbreviatedSourceTitle, String documentType, String source, String subject, String EID, String duplicatedIn, String country, String emailHost, String institution, String institutionWithCountry, String authorFull) {
+        this.authors = authors;
+        this.title = title;
+        this.year = year;
+        this.sourceTitle = sourceTitle;
+        this.volume = volume;
+        this.issue = issue;
+        this.artNo = artNo;
+        this.pageStart = pageStart;
+        this.pageEnd = pageEnd;
+        this.pageCount = pageCount;
+        this.citedByBy = citedByBy;
+        this.DOI = DOI;
+        this.link = link;
+        this.affiliations = affiliations;
+        this.authorsWithAffiliations = authorsWithAffiliations;
+        this.bbstract = anBbstract;
+        this.authorKeywords = author_Keywords;
+        this.indexKeywords = indexKeywords;
+        this.bothKeywords = bothKeywords;
+        this.correspondenceAddress = correspondenceAddress;
+        this.editors = editors;
+        this.publisherAddress = publisherAddress;
+        this.conferenceName = conferenceName;
+        this.conferenceLocation = conferenceLocation;
+        this.conferenceDate = conferenceDate;
+        this.publisher = publisher;
+        this.ISSN = ISSN;
+        this.ISBN = ISBN;
+        this.CODEN = CODEN;
+        this.pubMedID = pubMedID;
+        this.languageOfOriginalDocument = languageOfOriginalDocument;
+        this.abbreviatedSourceTitle = abbreviatedSourceTitle;
+        this.documentType = documentType;
+        this.source=source;
+        this.subject = subject;
+        this.EID = EID;
+        this.duplicatedIn = duplicatedIn;
+        this.country = country;
+        this.emailHost = emailHost;
+        this.institution = institution;
+        this.institutionWithCountry = institutionWithCountry;
+        this.authorFull = authorFull;
+        this.listOfTages = new HashMap<>();
+    }
 
+    public Map<String, List<String>> getListOfTages() {
+        return listOfTages;
+    }
 
+    public void setListOfTages(Map<String, List<String>> listOfTags) {
 
+        for (Map.Entry<String, List<String>> entry : listOfTags.entrySet()) {
+            this.listOfTages.put(entry.getKey(), entry.getValue());
+        }
+    }
 
     /* NEED TO BE REMOVED START*/
     String  CustomerName;

@@ -1,6 +1,9 @@
 com/example/springboot/Tags.class
-com/example/springboot/PublisherInfo.class
 com/example/springboot/AjaxResponseBody.class
-com/example/springboot/Application.class
-com/example/springboot/SearchCriteria.class
 com/example/springboot/HelloController.class
+com/example/springboot/category/ProgrammingLanguages.class
+com/example/springboot/PublisherInfo.class
+com/example/springboot/Application.class
+com/example/springboot/category/RefactoringLifeCycle.class
+com/example/springboot/SearchCriteria.class
+com/example/springboot/category/TargetOfRefactoring.class
