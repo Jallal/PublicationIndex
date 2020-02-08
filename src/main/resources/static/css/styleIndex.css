@@ -286,3 +286,6 @@ table.table td i {
 .text-nowrap {
     white-space: nowrap;
 }
+.popover{
+    max-width: 50%; /* Max Width of the popover (depending on the container!) */
+}

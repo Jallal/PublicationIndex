@@ -15,7 +15,6 @@ function drawPublicationPerCountryChart(value) {
     var data = google.visualization.arrayToDataTable(value);
     var options = {
       title: 'The number of publications per country',
-      color: '#FFA07A',
       chartArea: {width: '50%'},
       hAxis: {
         title: 'Total Publication',

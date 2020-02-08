@@ -519,23 +519,23 @@
             var refLife1=obj.RefactoringLifeCycle;
             var refLife2=refLife1.join(",");
             if(refLife2){
-              RefactoringLifeCycle="Refactoring Life Cycle :::"+refLife2;
+              RefactoringLifeCycle="Refactoring Life Cycle ::: "+refLife2;
             }
 
             var targetRef1=obj.TargetOfRefactoring;
             var targetRef2=targetRef1.join(",");
             if(targetRef2){
-              TargetOfRefactoring="Target Of Refactoring :::"+targetRef2;
+              TargetOfRefactoring="Target Of Refactoring ::: "+targetRef2;
             }
 
             var progLang1=obj.ProgrammingLanguages;
             var progLang2=progLang1.join(",");
             if(progLang2){
-              ProgrammingLanguages="Programming Languages :::"+progLang2;
+              ProgrammingLanguages="Programming Languages ::: "+progLang2;
             }
-
+            var abstractVal=count+1;
             html += '<tr>';
-            html += '<td>'+'<button type="button" id="bulk_actions_btn" class="btn btn-info" data-toggle="popover" title="Abstract" data-content="'+ data[count].bbstract+'">'+count+'</button>'+'</td>';
+            html += '<td>'+'<button type="button" id="bulk_actions_btn" class="btn btn-info" data-toggle="popover" data-placement="right" title="Abstract" data-content="'+data[count].bbstract+'">'+abstractVal+'</button>'+'</td>';
             html += '<td>' + data[count].authors + '</td>';
             html += '<td>' + data[count].title + '</td>';
             html += '<td>' + data[count].year + '</td>';

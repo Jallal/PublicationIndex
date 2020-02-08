@@ -18,7 +18,6 @@ function drawRegionsMap(value) {
     }
     var data = google.visualization.arrayToDataTable(value);
     var options = {
-      color: '#FFA07A'
     };
 
     var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
