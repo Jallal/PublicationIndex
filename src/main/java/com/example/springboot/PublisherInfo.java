@@ -291,9 +291,19 @@ public class PublisherInfo {
     String Address;
     String City;
     String PostalCode;
-    String Country;
+    //String Country;
     String[][] publicationsPerYear = new String[19][2];
     String[][] publicationsPerCategory= new String[19][2];
+    String[][] publicationsMaps= new String[19][2];
+    public String[][] getPublicationsMaps() {
+        return publicationsMaps;
+    }
+
+    public void setPublicationsMaps(String[][] publicationsMaps) {
+        this.publicationsMaps = publicationsMaps;
+    }
+
+
     /* NEED TO BE REMOVED END*/
     public String[][] getPublicationsPerCategory() {
         return publicationsPerCategory;
@@ -350,12 +360,16 @@ public class PublisherInfo {
         PostalCode = postalCode;
     }
 
-    public String getCountry() {
-        return Country;
+    public List<String> getCountry() {
+        //return country;
+        List<String> countries = new ArrayList<>();
+        String[] split = country.split(";");
+        countries= Arrays.asList(split);
+        return countries;
     }
 
     public void setCountry(String country) {
-        Country = country;
+        country = country;
     }
 
 

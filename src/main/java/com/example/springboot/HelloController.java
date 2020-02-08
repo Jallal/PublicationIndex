@@ -29,6 +29,7 @@ import java.util.stream.Collectors;
 import static com.example.springboot.category.RefactoringLifeCycle.isRefactoringLifeCycleCategory;
 import static com.example.springboot.category.TargetOfRefactoring.isTargetOfRefactoringCategory;
 import static java.util.Map.Entry.comparingByKey;
+import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toMap;
 
 @Controller
@@ -40,7 +41,7 @@ public class HelloController {
     }
 
 
-    public String[][] getTheGraphData(List<PublisherInfo> data) {
+    public String[][] getThePublicationPerYearGraphData(List<PublisherInfo> data) {
 
         Map<String, Long> counters = data.stream().collect(Collectors.groupingBy(p -> p.getYear(), Collectors.counting()));
         Map<String, Long> countersSorted = counters
@@ -67,6 +68,41 @@ public class HelloController {
 
         return pebPerYear;
     }
+
+
+
+
+
+    public String[][] getThePublicationPerCountryMapData(List<PublisherInfo> data) {
+
+
+        List<String> countries = data.stream().flatMap(i->i.getCountry().stream().filter(d->d!=null &&!d.isEmpty())).collect(Collectors.toList());
+        Map<String, Long> counters = countries.stream().collect(Collectors.groupingBy(p -> p, Collectors.counting()));
+        Map<String, Long> countersSorted = counters
+                .entrySet()
+                .stream()
+                .sorted(comparingByKey())
+                .collect(
+                        toMap(Map.Entry::getKey, Map.Entry::getValue,
+                                (e1, e2) -> e2, LinkedHashMap::new));
+
+        int arraySize = countersSorted.size();
+        String[][] pebPerYear = new String[arraySize][2];
+        pebPerYear[0][0] = "Country";
+        pebPerYear[0][1] = "Popularity";
+        int count = 1;
+        for (Map.Entry<String, Long> entry : countersSorted.entrySet()) {
+            if (count < arraySize) {
+                pebPerYear[count][0] = entry.getKey();
+                pebPerYear[count][1] = String.valueOf(entry.getValue());
+            }
+            count++;
+
+        }
+
+        return pebPerYear;
+    }
+
 
 
    /* public String[][] getTheChartData(List<PublisherInfo> newdata) {
@@ -422,15 +458,20 @@ public class HelloController {
         }
 
         //put the graph data
-        String[][] pebPerYear = getTheGraphData(data);
+        String[][] pebPerYear = getThePublicationPerYearGraphData(data);
         data.get(0).setPublicationsPerYear(pebPerYear);
 
+        //put the map data
+        String[][] pebPerCountryMap = getThePublicationPerCountryMapData(data);
         System.out.print("***************************************************\n");
         for (PublisherInfo info : data) {
             //System.out.print(data.get(0).getPublicationsPerYear()[i][0] + ":::::::::" + data.get(0).getPublicationsPerYear()[i][1] + "\n");
-            System.out.println("Publication index :"+info.getPublisher() +"********** List of tags : "+info.getListOfTages().toString());
+            System.out.println("Publication index :"+info.getPublicationsMaps().toString() +"\n");
         }
         System.out.print("***************************************************\n");
+        data.get(0).setPublicationsMaps(pebPerCountryMap);
+
+
 
         AjaxResponseBody result = new AjaxResponseBody();
         result.setMsg("success");

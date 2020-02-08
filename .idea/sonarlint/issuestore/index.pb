@@ -21,7 +21,3 @@ U
 %src/main/webapp/WEB-INF/jsp/index.jsp,f/1/f16d1c46eaaabb105b651081f6c87e034b2028d2
 ^
 .src/main/java/com/example/springboot/Tags.java,d/3/d3fba8f643596e01f6a0036aec7b238f4eafd056
-m
-=src/main/java/com/example/springboot/TargetOfRefactoring.java,3/2/3277d825cc194660b2cfcea37a4a81976d926817
-n
->src/main/java/com/example/springboot/RefactoringLifeCycle.java,8/e/8e6c39e61849952ac0716649ad9a678b01bcc326

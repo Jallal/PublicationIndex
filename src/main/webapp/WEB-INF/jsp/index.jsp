@@ -19,6 +19,17 @@
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <!--script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script-->
+
+    <!--have Ajx work -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
 </head>
 
 
@@ -254,11 +265,9 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Authors Name <i class="fa fa-sort"></i></th>
+                            <th>Authors Name </th>
                             <th>Article Title</th>
-                            <th>Publication year <i class="fa fa-sort"></i></th>
-                            <th>Document Type</th>
-                            <th>Publisher <i class="fa fa-sort"></i></th>
+                            <th>Publication year</th>
                             <th>Keywords</th>
                         </tr>
                         </thead>
@@ -268,7 +277,6 @@
                             <td>Thomas Hardy</td>
                             <td>89 Chiaroscuro Rd.</td>
                             <td>Portland</td>
-                            <td>97219</td>
                             <td>USA</td>
                             <td>
                                 <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
@@ -282,7 +290,6 @@
                             <td>Maria Anders</td>
                             <td>Obere Str. 57</td>
                             <td>Berlin</td>
-                            <td>12209</td>
                             <td>Germany</td>
                             <td>
                                 <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
@@ -296,7 +303,6 @@
                             <td>Fran Wilson</td>
                             <td>C/ Araquil, 67</td>
                             <td>Madrid</td>
-                            <td>28023</td>
                             <td>Spain</td>
                             <td>
                                 <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
@@ -310,7 +316,6 @@
                             <td>Dominique Perrier</td>
                             <td>25, rue Lauriston</td>
                             <td>Paris</td>
-                            <td>75016</td>
                             <td>France</td>
                             <td>
                                 <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
@@ -324,7 +329,6 @@
                             <td>Dominique Perrier</td>
                             <td>25, rue Lauriston</td>
                             <td>Paris</td>
-                            <td>75016</td>
                             <td>France</td>
                             <td>
                                 <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
@@ -338,7 +342,6 @@
                             <td>Dominique Perrier</td>
                             <td>25, rue Lauriston</td>
                             <td>Paris</td>
-                            <td>75016</td>
                             <td>France</td>
                             <td>
                                 <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
@@ -352,7 +355,6 @@
                             <td>Dominique Perrier</td>
                             <td>25, rue Lauriston</td>
                             <td>Paris</td>
-                            <td>75016</td>
                             <td>France</td>
                             <td>
                                 <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
@@ -366,7 +368,6 @@
                             <td>Dominique Perrier</td>
                             <td>25, rue Lauriston</td>
                             <td>Paris</td>
-                            <td>75016</td>
                             <td>France</td>
                             <td>
                                 <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
@@ -397,10 +398,6 @@
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-            <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script-->
-            <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script-->
             <!--table end-->
             <div class="line"></div>
             <!-- Table Graph and Pie --->
@@ -432,15 +429,38 @@
                     </div>
             </div>
             <div class="line"></div>
+
+            <!-- Table Graph country per publication and Map --->
+            <div class="row">
+                <!-- Starting the graph-->
+                <div class="col-sm-5 col-md-6">
+                    <div class="table-wrapper">
+                        <div class="card spur-card">
+                            <div class="centerBlock">
+                                <!--graph for publications-->
+                                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                                <!--div id="chart_div" style="width: 900px; height: 500px;"></div-->
+                                <div id="regions_div_graph" style="width:600px; height: 500px;"></div>
+                                <script type="text/javascript" src="css/js/pubPerYearGraph.js"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                    <div class="table-wrapper">
+                        <div class="card spur-card">
+                            <div class="centerBlock">
+                                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                                <div id="regions_div" style="width: 600px; height: 500px;"></div>
+                                <script type="text/javascript" src="css/js/maps.js"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END GRAPH AND MAP-->
         </div>
     </div>
-
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -450,8 +470,7 @@
         });
     </script>
 </body>
-<!--have Ajx work -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
 </html>
 
 
@@ -484,32 +503,45 @@
       cache: false,
       timeout: 600000,
       success: function (data) {
+
+
         $('#total_records').text(data.length);
         var html = '';
         if (data.length > 0) {
 
           for (var count = 0; count < data.length; count++) {
+            var RefactoringLifeCycle="";
+            var TargetOfRefactoring="";
+            var ProgrammingLanguages="";
+
             var tags= JSON.stringify(data[count].listOfTages);
             var obj = JSON.parse(tags);
             var refLife1=obj.RefactoringLifeCycle;
-            var refLife2=refLife1.join(" ");
+            var refLife2=refLife1.join(",");
+            if(refLife2){
+              RefactoringLifeCycle="Refactoring Life Cycle :::"+refLife2;
+            }
 
             var targetRef1=obj.TargetOfRefactoring;
-            var targetRef2=targetRef1.join(" ");
+            var targetRef2=targetRef1.join(",");
+            if(targetRef2){
+              TargetOfRefactoring="Target Of Refactoring :::"+targetRef2;
+            }
 
             var progLang1=obj.ProgrammingLanguages;
-            var progLang2=progLang1.join(" ");
+            var progLang2=progLang1.join(",");
+            if(progLang2){
+              ProgrammingLanguages="Programming Languages :::"+progLang2;
+            }
 
             html += '<tr>';
-            html += '<td>' + count + '</td>';
+            html += '<td>'+'<button type="button" id="bulk_actions_btn" class="btn btn-info" data-toggle="popover" title="Abstract" data-content="'+ data[count].bbstract+'">'+count+'</button>'+'</td>';
             html += '<td>' + data[count].authors + '</td>';
             html += '<td>' + data[count].title + '</td>';
             html += '<td>' + data[count].year + '</td>';
-            html += '<td>' + data[count].documentType + '</td>';
-            html += '<td>' + data[count].publisher + '</td>';
-            html += '<td class="text-info">'+refLife2+'&nbsp; ' +
-              '<span class="text-warning">'+targetRef2+'&nbsp;' +
-              '</span><span class="text-danger">'+progLang2+'&nbsp;</span>'+ '</td></tr>';
+            html += '<td id="a" class="text-info text-nowrap">'+RefactoringLifeCycle+'&nbsp;<br>' +
+              '<span class="text-warning text-nowrap">'+TargetOfRefactoring+'&nbsp;<br>' +
+              '</span><span class="text-danger text-nowrap">'+ProgrammingLanguages+'&nbsp;'+'</span>'+ '</td></tr>';
           }
           jQuery.getScript("css/js/pubPerYearGraph.js").done(function () {
             console.log("yay, all good, do something *");
@@ -521,6 +553,20 @@
           jQuery.getScript("css/js/tagPie.js").done(function () {
             console.log("yay, all good, do something *");
             drawPieChart(data[0].publicationsPerCategory);
+          }).fail(function () {
+            console.log("boo first chart failed , fall back to something else");
+          });
+
+          jQuery.getScript("css/js/maps.js").done(function () {
+            console.log("yay, we got the map *");
+            drawRegionsMap(data[0].publicationsMaps);
+          }).fail(function () {
+            console.log("boo first chart failed , fall back to something else");
+          });
+
+          jQuery.getScript("css/js/countryPerPublication.js").done(function () {
+            console.log("yay, we got the country per pub *");
+            drawPublicationPerCountryChart(data[0].publicationsMaps);
           }).fail(function () {
             console.log("boo first chart failed , fall back to something else");
           });
@@ -557,12 +603,18 @@
   });
 
   $(function() {
+
     $(".homeSubmenu0").on("click", function(evt) {
       event.preventDefault();
       var search = {};
       var clicked_button = $(this);
       search["category"] = clicked_button.attr("href");
       fire_ajax_submit(search);
+      //test
+      var avalue = $('#a').val();
+      var newVal = avalue.replace(/^\s*[\r\n]/gm, '');
+      //var finalResults = newVal.replace("\n", "");
+      $('#a').val(newVal);
     });
   });
   $(function() {
@@ -615,10 +667,31 @@
 
 
   $(document).ready(function(){
+    $('#element').popover('show');
     $("select.listOdRecords").change(function(){
       var selectedCountry = $(this).children("option:selected").val();
       $("table > tbody > tr").hide().slice(0, selectedCountry).show();
     });
   });
 
+
+  $(document).on('click', '#bulk_actions_btn', function (e) {
+    //
+    // If popover is visible: do nothing
+    //
+    if ($(this).prop('popShown') == undefined) {
+      $(this).prop('popShown', true).popover('show');
+    }
+  });
+
+  $(function () {
+    $('#bulk_actions_btn').on('hide.bs.popover', function (e) {
+      //
+      // on hiding popover stop action
+      //
+      e.preventDefault();
+    });
+  });
+
 </script>
+
