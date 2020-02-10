@@ -43,7 +43,7 @@ public class TargetOfRefactoring {
                 tags.add("GUI");
 
             } if(element.getBbstract().toLowerCase().contains("relational_schema".toLowerCase()) ||
-                    element.getBbstract().toLowerCase().contains("databse".toLowerCase())) {
+                    element.getBbstract().toLowerCase().contains("database".toLowerCase())) {
                 tags.add("database");
             }
             tags = tags.stream().distinct().collect(Collectors.toList());
@@ -65,13 +65,13 @@ public class TargetOfRefactoring {
         categoriesMap.put(THIRD_ITEM, Long.valueOf(this.getRefactoringUISubCategory(newdata).size()));
         categoriesMap.put(FOURTH_ITEM, Long.valueOf(this.getRefactoringModelSubCategory(newdata).size()));
         categoriesMap.put(FIFTH_ITEM, Long.valueOf(this.getRefactoringDatabaseSubCategory(newdata).size()));
-        int arraySize = categoriesMap.size();
+        int arraySize = categoriesMap.size()+1;
         String[][] pebPerCategory = new String[arraySize][2];
         pebPerCategory[0][0] = "Task";
         pebPerCategory[0][1] = "Hours per Day";
         int count = 1;
         for (Map.Entry<String, Long> entry : categoriesMap.entrySet()) {
-            if (count < arraySize) {
+            if (count <= arraySize) {
                 pebPerCategory[count][0] = entry.getKey();
                 pebPerCategory[count][1] = String.valueOf(entry.getValue());
             }
@@ -99,6 +99,8 @@ public class TargetOfRefactoring {
             return data;
         }
     }
+
+
 
     private List<PublisherInfo> getRefactoringCodeSubCategory(List<PublisherInfo> data) {
 

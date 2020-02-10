@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc1c4ca9-7435-446a-95f8-fbeb263d4b61" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/styleIndex.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/styleIndex.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/category/RefactoringLifeCycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/category/RefactoringLifeCycle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springboot/category/TargetOfRefactoring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springboot/category/TargetOfRefactoring.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,38 +38,8 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="537" column="136" selection-start-line="537" selection-start-column="136" selection-end-line="537" selection-end-column="136" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="maps.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/js/maps.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AjaxResponseBody.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/AjaxResponseBody.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
-              <folding>
-                <element signature="e#650#651#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tagPie.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/js/tagPie.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+            <state relative-caret-position="-5341">
+              <caret line="215" column="68" lean-forward="true" selection-start-line="215" selection-start-column="68" selection-end-line="215" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -94,8 +65,8 @@
       <file leaf-file-name="PublisherInfo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/PublisherInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="367" column="25" lean-forward="true" selection-start-line="367" selection-start-column="25" selection-end-line="367" selection-end-column="25" />
+            <state relative-caret-position="194">
+              <caret line="311" column="16" selection-start-line="311" selection-start-column="16" selection-end-line="311" selection-end-column="16" />
               <folding>
                 <element signature="e#7100#7101#0" expanded="true" />
                 <element signature="e#7134#7135#0" expanded="true" />
@@ -110,11 +81,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HelloController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HelloController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/HelloController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="88" selection-start-line="88" selection-end-line="89" />
+            <state relative-caret-position="7">
+              <caret line="365" column="68" selection-start-line="365" selection-start-column="68" selection-end-line="365" selection-end-column="68" />
+              <folding>
+                <element signature="method#readTheDataFromVCS#0;class#HelloController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TargetOfRefactoring.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/category/TargetOfRefactoring.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1">
+              <caret line="59" column="22" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProgrammingLanguages.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/category/ProgrammingLanguages.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -122,16 +114,25 @@
       <file leaf-file-name="RefactoringLifeCycle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/category/RefactoringLifeCycle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-418">
-              <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+            <state relative-caret-position="281">
+              <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styleIndex.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RefactoringObjectives.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/category/RefactoringObjectives.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styleIndex.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/styleIndex.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
+            <state relative-caret-position="296">
               <caret line="289" column="80" lean-forward="true" selection-start-line="289" selection-start-column="80" selection-end-line="289" selection-end-column="80" />
             </state>
           </provider>
@@ -161,6 +162,7 @@
       <find>popper</find>
       <find>homeSubmenu0</find>
       <find>publicationsPerCategory</find>
+      <find>pope</find>
       <find>jQuery</find>
     </findStrings>
   </component>
@@ -194,15 +196,15 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/css/js/pubPerYearGraph.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/springboot/RefactoringLifeCycle.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/springboot/TargetOfRefactoring.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/springboot/category/RefactoringLifeCycle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/springboot/category/TargetOfRefactoring.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/springboot/category/ProgrammingLanguages.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/springboot/PublisherInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/springboot/HelloController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/js/countryPerPublication.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/js/maps.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/styleIndex.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/springboot/category/RefactoringLifeCycle.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/springboot/category/TargetOfRefactoring.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/springboot/HelloController.java" />
       </list>
     </option>
   </component>
@@ -505,16 +507,15 @@
       <workItem from="1581025191936" duration="16796000" />
       <workItem from="1581048584826" duration="2201000" />
       <workItem from="1581087402331" duration="117000" />
-      <workItem from="1581117488515" duration="23341000" />
+      <workItem from="1581117488515" duration="30146000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216074000" />
+    <option name="totallyTimeSpent" value="222879000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1849" height="866" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50027794" side_tool="true" weight="0.05625879" />
@@ -526,7 +527,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49972206" visible="true" weight="0.67791843" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49972206" visible="true" weight="0.90154713" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="8" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
@@ -537,7 +538,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32911393" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25347415" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21345192" />
       <window_info anchor="right" id="Bean Validation" order="4" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="bottom" id="SonarLint" order="7" />
@@ -596,7 +597,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="27" />
+      <option name="time" value="31" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -811,27 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/category/TargetOfRefactoring.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/category/RefactoringObjectives.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/category/ProgrammingLanguages.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/category/Fields.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -870,10 +850,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/category/RefactoringLifeCycle.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/js/countryPerPublication.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-418">
-          <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+        <state relative-caret-position="215">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/styleIndex.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="289" column="80" lean-forward="true" selection-start-line="289" selection-start-column="80" selection-end-line="289" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/js/maps.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5341">
+          <caret line="215" column="68" lean-forward="true" selection-start-line="215" selection-start-column="68" selection-end-line="215" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -884,10 +885,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/category/RefactoringLifeCycle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/category/RefactoringObjectives.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/category/ProgrammingLanguages.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/category/TargetOfRefactoring.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1">
+          <caret line="59" column="22" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/PublisherInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="367" column="25" lean-forward="true" selection-start-line="367" selection-start-column="25" selection-end-line="367" selection-end-column="25" />
+        <state relative-caret-position="194">
+          <caret line="311" column="16" selection-start-line="311" selection-start-column="16" selection-end-line="311" selection-end-column="16" />
           <folding>
             <element signature="e#7100#7101#0" expanded="true" />
             <element signature="e#7134#7135#0" expanded="true" />
@@ -903,36 +932,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/springboot/HelloController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="88" selection-start-line="88" selection-end-line="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/js/countryPerPublication.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/js/maps.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="537" column="136" selection-start-line="537" selection-start-column="136" selection-end-line="537" selection-end-column="136" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/styleIndex.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="289" column="80" lean-forward="true" selection-start-line="289" selection-start-column="80" selection-end-line="289" selection-end-column="80" />
+        <state relative-caret-position="7">
+          <caret line="365" column="68" selection-start-line="365" selection-start-column="68" selection-end-line="365" selection-end-column="68" />
+          <folding>
+            <element signature="method#readTheDataFromVCS#0;class#HelloController#0" />
+          </folding>
         </state>
       </provider>
     </entry>

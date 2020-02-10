@@ -4,6 +4,7 @@ import com.example.springboot.category.ProgrammingLanguages;
 import com.example.springboot.category.RefactoringLifeCycle;
 import com.example.springboot.category.TargetOfRefactoring;
 import com.opencsv.CSVReader;
+import com.sun.org.apache.bcel.internal.generic.Select;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.ResourceUtils;
@@ -21,6 +22,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,16 +36,43 @@ import static java.util.stream.Collectors.toMap;
 
 @Controller
 public class HelloController {
+    private  List<PublisherInfo> rawData;
+    private RefactoringLifeCycle refactoringLifeCycle;
+    private TargetOfRefactoring targetOfRefactoring;
+    private ProgrammingLanguages programmingLanguages;
 
     @RequestMapping("/index")
     public String loginMessage() throws IOException {
+        this.rawData = fetchTheSearchData();
+        this.rawData.sort(
+                Comparator.comparing(PublisherInfo::getYear).thenComparing(PublisherInfo::getAuthors).reversed()
+        );
+        this.refactoringLifeCycle = new RefactoringLifeCycle();
+        this.targetOfRefactoring = new TargetOfRefactoring();
+        this.programmingLanguages = new ProgrammingLanguages();
+
+        this.refactoringLifeCycle.updateTheTagsColumInTheDataSet(this.rawData);
+        this.targetOfRefactoring.updateTheTagsColumInTheDataSet(this.rawData);
+        this.programmingLanguages.updateTheTagsColumInTheDataSet(this.rawData);
+
+
+
         return "index";
     }
 
 
-    public String[][] getThePublicationPerYearGraphData(List<PublisherInfo> data) {
 
-        Map<String, Long> counters = data.stream().collect(Collectors.groupingBy(p -> p.getYear(), Collectors.counting()));
+
+    public String[][] getAllTheCategoriesForPieChartFOrGlobalSearch(List<PublisherInfo> newdata) {
+
+         List<String> alltages = new ArrayList<>();
+         for(PublisherInfo element : newdata ) {
+             for (Map.Entry<String, List<String>> entry : element.getListOfTages().entrySet()) {
+                 alltages.add(entry.getKey());
+             }
+         }
+
+        Map<String, Long> counters =  alltages.stream().collect(Collectors.groupingBy(p -> p, Collectors.counting()));
         Map<String, Long> countersSorted = counters
                 .entrySet()
                 .stream()
@@ -52,13 +81,13 @@ public class HelloController {
                         toMap(Map.Entry::getKey, Map.Entry::getValue,
                                 (e1, e2) -> e2, LinkedHashMap::new));
 
-        int arraySize = countersSorted.size();
+        int arraySize = countersSorted.size()+1;
         String[][] pebPerYear = new String[arraySize][2];
-        pebPerYear[0][0] = "year";
-        pebPerYear[0][1] = "Publication";
+        pebPerYear[0][0] = "Task";
+        pebPerYear[0][1] = "Hours per Day";
         int count = 1;
         for (Map.Entry<String, Long> entry : countersSorted.entrySet()) {
-            if (count < arraySize) {
+            if (count <= arraySize) {
                 pebPerYear[count][0] = entry.getKey();
                 pebPerYear[count][1] = String.valueOf(entry.getValue());
             }
@@ -70,7 +99,33 @@ public class HelloController {
     }
 
 
+    public String[][] getThePublicationPerYearGraphData(List<PublisherInfo> data) {
 
+        Map<String, Long> counters = data.stream().filter(i->i.getYear()!=null&&!i.getYear().isEmpty()).collect(Collectors.groupingBy(p -> p.getYear().trim(), Collectors.counting()));
+        Map<String, Long> countersSorted = counters
+                .entrySet()
+                .stream()
+                .sorted(comparingByKey())
+                .collect(
+                        toMap(Map.Entry::getKey, Map.Entry::getValue,
+                                (e1, e2) -> e2, LinkedHashMap::new));
+
+        int arraySize = countersSorted.size()+1;
+        String[][] pebPerYear = new String[arraySize][2];
+        pebPerYear[0][0] = "year";
+        pebPerYear[0][1] = "Publication";
+        int count = 1;
+        for (Map.Entry<String, Long> entry : countersSorted.entrySet()) {
+            if (count <= arraySize) {
+                pebPerYear[count][0] = entry.getKey();
+                pebPerYear[count][1] = String.valueOf(entry.getValue());
+            }
+            count++;
+
+        }
+
+        return pebPerYear;
+    }
 
 
     public String[][] getThePublicationPerCountryMapData(List<PublisherInfo> data) {
@@ -86,13 +141,13 @@ public class HelloController {
                         toMap(Map.Entry::getKey, Map.Entry::getValue,
                                 (e1, e2) -> e2, LinkedHashMap::new));
 
-        int arraySize = countersSorted.size();
+        int arraySize = countersSorted.size()+1;
         String[][] pebPerYear = new String[arraySize][2];
         pebPerYear[0][0] = "Country";
-        pebPerYear[0][1] = "Popularity";
+        pebPerYear[0][1] = "Publication";
         int count = 1;
         for (Map.Entry<String, Long> entry : countersSorted.entrySet()) {
-            if (count < arraySize) {
+            if (count <= arraySize) {
                 pebPerYear[count][0] = entry.getKey();
                 pebPerYear[count][1] = String.valueOf(entry.getValue());
             }
@@ -132,6 +187,15 @@ public class HelloController {
         return pebPerCategory;
     }*/
 
+   public List<PublisherInfo>searchByAny(List<PublisherInfo> data, String filter){
+
+       return data.stream().filter(e -> e != null).filter(i -> i.getTitle().toLowerCase().contains(filter.toLowerCase())
+              || i.getBbstract().toLowerCase().contains(filter.toLowerCase())
+               || i.getAuthors().toLowerCase().contains(filter.toLowerCase())
+       ).collect(Collectors.toList());
+
+   }
+
     public List<PublisherInfo> searchByPublicationTitle(List<PublisherInfo> data, String filter) {
 
         return data.stream().filter(e -> e != null).filter(i -> i.getTitle().toLowerCase().contains(filter.toLowerCase())).collect(Collectors.toList());
@@ -168,7 +232,7 @@ public class HelloController {
 
     }*/
 
-    public List<PublisherInfo> fetchTheSearchData(SearchCriteria search) {
+    public List<PublisherInfo> fetchTheSearchData() {
         List<PublisherInfo> data = new ArrayList<>();
         String filename = "papersPreprocessed.csv";
         try {
@@ -178,166 +242,6 @@ public class HelloController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-        //data.get(0).setPublicationsPerCategory(pebPerYear);
-		/*String[][] pebPerYear = new String[5][2];
-		pebPerYear[0][0]="year";
-		pebPerYear[0][1]="Publication";
-		//1
-		pebPerYear[1][0]="2014";
-		pebPerYear[1][1]="1000";
-
-		//2
-		pebPerYear[2][0]="2015";
-		pebPerYear[2][1]="1170";
-
-		//3
-		pebPerYear[3][0]="2016";
-		pebPerYear[3][1]="2010";
-
-		//4
-		pebPerYear[4][0]="2017";
-		pebPerYear[4][1]="2200";
-
-		//5
-		pebPerYear[4][0]="2018";
-		pebPerYear[4][1]="2500";
-
-
-		//publication per category
-		//[['Task', 'Hours per Day'], ['Work', 11], ['Eat', 2], ['Commute', 2], ['Watch TV', 2], ['Sleep', 7]]
-		String[][] pebPerCategory = new String[6][2];
-		pebPerCategory[0][0]="Task";
-		pebPerCategory[0][1]="Hours per Day";
-		//1
-		pebPerCategory[1][0]="Work";
-		pebPerCategory[1][1]="11";
-
-		//2
-		pebPerCategory[2][0]="EatME";
-		pebPerCategory[2][1]="2";
-
-		//3
-		pebPerCategory[3][0]="CommuteME";
-		pebPerCategory[3][1]="2";
-
-		//4
-		pebPerCategory[4][0]="Watch ME";
-		pebPerCategory[4][1]="2";
-
-		//5
-		pebPerCategory[5][0]="SleepME";
-		pebPerCategory[5][1]="7";
-
-
-		//1st record
-		PublisherInfo item = new PublisherInfo();
-		item.setCustomerName("Jallal");
-		item.setAddress("123 Happy Street");
-		item.setCity("Happy City");
-		item.setCountry("R1");
-		item.setGender("M");
-		item.setPostalCode("48108");
-		item.setPublicationsPerYear(pebPerYear);
-		item.setPublicationsPerCategory(pebPerCategory);
-
-		//2nd record
-		PublisherInfo item2 = new PublisherInfo();
-		item2.setCustomerName("Jallal");
-		item2.setAddress("123 Happy Street");
-		item2.setCity("Happy City");
-		item2.setCountry("P1");
-		item2.setGender("M");
-		item2.setPostalCode("48108");
-		item2.setPublicationsPerYear(pebPerYear);
-		item2.setPublicationsPerCategory(pebPerCategory);
-
-		//3rd record
-		PublisherInfo item3 = new PublisherInfo();
-		item3.setCustomerName("Jallal");
-		item3.setAddress("123 Happy Street");
-		item3.setCity("Happy City");
-		item3.setCountry("T1");
-		item3.setGender("M");
-		item3.setPostalCode("48108");
-		item3.setPublicationsPerYear(pebPerYear);
-		item3.setPublicationsPerCategory(pebPerCategory);
-
-		//4th record
-		PublisherInfo item4 = new PublisherInfo();
-		item4.setCustomerName("Jallal");
-		item4.setAddress("123 Happy Street");
-		item4.setCity("Happy City");
-		item4.setCountry("D1");
-		item4.setGender("M");
-		item4.setPostalCode("48108");
-		item4.setPublicationsPerYear(pebPerYear);
-		item4.setPublicationsPerCategory(pebPerCategory);
-
-		//5th record
-		PublisherInfo item5 = new PublisherInfo();
-		item5.setCustomerName("Jallal");
-		item5.setAddress("123 Happy Street");
-		item5.setCity("Happy City");
-		item5.setCountry("USA");
-		item5.setGender("M");
-		item5.setPostalCode("48108");
-		item5.setPublicationsPerYear(pebPerYear);
-		item5.setPublicationsPerCategory(pebPerCategory);
-
-		//5th record
-		PublisherInfo item6 = new PublisherInfo();
-		item6.setCustomerName("Jallal");
-		item6.setAddress("123 Happy Street");
-		item6.setCity("Happy City");
-		item6.setCountry("R2");
-		item6.setGender("M");
-		item6.setPostalCode("48108");
-		item6.setPublicationsPerYear(pebPerYear);
-		item6.setPublicationsPerCategory(pebPerCategory);
-
-		//6th record
-		PublisherInfo item7 = new PublisherInfo();
-		item7.setCustomerName("Jallal");
-		item7.setAddress("123 Happy Street");
-		item7.setCity("Happy City");
-		item7.setCountry("D2");
-		item7.setGender("M");
-		item7.setPostalCode("48108");
-		item7.setPublicationsPerYear(pebPerYear);
-		item7.setPublicationsPerCategory(pebPerCategory);
-
-		//7th record
-		PublisherInfo item8 = new PublisherInfo();
-		item8.setCustomerName("Jallal");
-		item8.setAddress("123 Happy Street");
-		item8.setCity("Happy City");
-		item8.setCountry("T2");
-		item8.setGender("M");
-		item8.setPostalCode("48108");
-		item8.setPublicationsPerYear(pebPerYear);
-		item8.setPublicationsPerCategory(pebPerCategory);
-
-		//7th record
-		PublisherInfo item9 = new PublisherInfo();
-		item9.setCustomerName("Jallal");
-		item9.setAddress("123 Happy Street");
-		item9.setCity("Happy City");
-		item9.setCountry("P2");
-		item9.setGender("M");
-		item9.setPostalCode("48108");
-		item9.setPublicationsPerYear(pebPerYear);
-		item9.setPublicationsPerCategory(pebPerCategory);
-
-		data.add(item);
-		data.add(item2);
-		data.add(item3);
-		data.add(item4);
-		data.add(item5);
-		data.add(item6);
-		data.add(item7);
-		data.add(item8);*/
         return data;
     }
 
@@ -402,17 +306,16 @@ public class HelloController {
 
     @PostMapping("/api/search")
     public ResponseEntity<?> getSearchResultViaAjax(@Valid @RequestBody SearchCriteria search, Errors errors) throws Exception {
+        List<PublisherInfo> data =this.rawData;
 
         System.out.print("******************************************************\n");
         System.out.print(search.toString());
         System.out.print("******************************************************\n");
-        List<PublisherInfo> data = fetchTheSearchData(search);
 
-        data.sort(
-                Comparator.comparing(PublisherInfo::getYear).thenComparing(PublisherInfo::getAuthors).reversed()
-        );
 
-        if (null != search.getAuthorName() && search.getSearch().equalsIgnoreCase("name")) {
+        if (null != search.getAuthorName() && search.getSearch().equalsIgnoreCase("Select search criteria")) {
+            data = searchByAny(data, search.getAuthorName());
+        }else if (null != search.getAuthorName() && search.getSearch().equalsIgnoreCase("name")) {
             data = searchByAuthorName(data, search.getAuthorName());
         } else if (null != search.getAuthorName() && search.getSearch().equalsIgnoreCase("category")) {
             data = searchByTagName(data, search.getAuthorName());
@@ -420,16 +323,8 @@ public class HelloController {
             data = searchByJournalName(data, search.getAuthorName());
         } else if (null != search.getAuthorName() && search.getSearch().equalsIgnoreCase("title")) {
             data = searchByPublicationTitle(data, search.getAuthorName());
+
         }
-        RefactoringLifeCycle refactoringLifeCycle = new RefactoringLifeCycle();
-        refactoringLifeCycle.updateTheTagsColumInTheDataSet(data);
-
-        TargetOfRefactoring targetOfRefactoring = new TargetOfRefactoring();
-        targetOfRefactoring.updateTheTagsColumInTheDataSet(data);
-
-        ProgrammingLanguages programmingLanguages = new ProgrammingLanguages();
-        programmingLanguages.updateTheTagsColumInTheDataSet(data);
-
 
 
         if (null != search.getCategory()) {
@@ -438,7 +333,7 @@ public class HelloController {
 
                 //filter by the categories
                 //RefactoringLifeCycle refactoringLifeCycle = new RefactoringLifeCycle();
-                data =  refactoringLifeCycle.getRefactoringByCategory(data,search.getCategory());
+                data =  this.refactoringLifeCycle.getRefactoringByCategory(data,search.getCategory());
 
                 ////put the pie data
                 String[][] publicationsPerCategory = refactoringLifeCycle.getTheChartDataForRefactoring(data);
@@ -447,26 +342,30 @@ public class HelloController {
             }else if(isTargetOfRefactoringCategory(search.getCategory())){
 
                 //filter by the categories
-               // TargetOfRefactoring targetOfRefactoring = new TargetOfRefactoring();
-                data =  targetOfRefactoring.getRefactoringByCategory(data,search.getCategory());
+                //TargetOfRefactoring targetOfRefactoring = new TargetOfRefactoring();
+                data =  this.targetOfRefactoring.getRefactoringByCategory(data,search.getCategory());
 
                 //put the pie data
                 String[][] publicationsPerCategory = targetOfRefactoring.getTheChartDataForRefactoring(data);
                 data.get(0).setPublicationsPerCategory(publicationsPerCategory);
 
             }
+        }else {
+
+            String[][] allCategories = getAllTheCategoriesForPieChartFOrGlobalSearch(data);
+            data.get(0).setPublicationsPerCategory(allCategories);
         }
 
-        //put the graph data
+        //put the publication per year graph data
         String[][] pebPerYear = getThePublicationPerYearGraphData(data);
         data.get(0).setPublicationsPerYear(pebPerYear);
 
         //put the map data
         String[][] pebPerCountryMap = getThePublicationPerCountryMapData(data);
         System.out.print("***************************************************\n");
-        for (PublisherInfo info : data) {
-            //System.out.print(data.get(0).getPublicationsPerYear()[i][0] + ":::::::::" + data.get(0).getPublicationsPerYear()[i][1] + "\n");
-            System.out.println("Publication index :"+info.getPublicationsMaps().toString() +"\n");
+        for (int i=0; i< data.get(0).getPublicationsPerYear().length;i++) {
+            System.out.print(data.get(0).getPublicationsPerYear()[i][0] + ":::::::::" + data.get(0).getPublicationsPerYear()[i][1] + "\n");
+            //System.out.println("Publication index :"+info.getPublicationsMaps().toString() +"\n");
         }
         System.out.print("***************************************************\n");
         data.get(0).setPublicationsMaps(pebPerCountryMap);
