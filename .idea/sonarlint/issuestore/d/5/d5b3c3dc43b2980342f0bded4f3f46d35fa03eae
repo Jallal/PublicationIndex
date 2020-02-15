@@ -1,29 +1,36 @@
 
-Gsquid:S1148Œ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ø®µ¾.
-dsquid:S2147‹"ECombine this catch with the one at line 137, which has the same body.(ï­£Ä8ø®µ¾.
+¤%squid:RedundantThrowsDeclarationCheck´"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(¸ÄæI8¿ÿ×ç‚.
+osquid:CommentedOutCodeLineÙ"<This block of commented-out lines of code should be removed.(©§¼›şÿÿÿÿ8¬şÚç‚.
 \
-squid:S106ï"9Replace this use of System.out or System.err by a logger.(åÇ›½üÿÿÿÿ8ø®µ¾.
-jsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Âì»ù8ø®µ¾.
+squid:S106ï"9Replace this use of System.out or System.err by a logger.(‡÷ò¹ıÿÿÿÿ8Ş¤Ûè‚.
+^squid:UselessImportCheck".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8Œ†ç‚.
 \
-squid:S106ğ"9Replace this use of System.out or System.err by a logger.(âÊ¥ğüÿÿÿÿ8ø®µ¾.
-`squid:S1612n"=Replace this lambda with method reference 'Objects::nonNull'.(ûÍ³ûÿÿÿÿ8ø®µ¾.
-\
-squid:S106¡"9Replace this use of System.out or System.err by a logger.(‡÷ò¹ıÿÿÿÿ8ò†³Ã.
+squid:S106¸"9Replace this use of System.out or System.err by a logger.(âÊ¥ğüÿÿÿÿ8³úÓç‚.
+jsquid:CommentedOutCodeLineğ"<This block of commented-out lines of code should be removed.(†Ã˜Ü8Ş¤Ûè‚.
+psquid:S3776´"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(¸ÄæI8®÷Úè‚.
+asquid:S1612Ï"=Replace this lambda with method reference 'Objects::nonNull'.(…£€úÿÿÿÿ8¿ÿ×ç‚.
+\squid:S1612É"=Replace this lambda with method reference 'Objects::nonNull'.(˜Ï¾­8¿ÿ×ç‚.
+ksquid:S2095û"GUse try-with-resources or close this "CSVReader" in a "finally" clause.(ÔŒıôøÿÿÿÿ8¿ÿ×ç‚.
 W
-squid:S106Ÿ"9Replace this use of System.out or System.err by a logger.(ÿ£’â8ò†³Ã.
-W
-squid:S106£"9Replace this use of System.out or System.err by a logger.(ÿ£’â8Š·³Ã.
-Zsquid:S1612s"=Replace this lambda with method reference 'Objects::nonNull'.(˜Á€48ø®µ¾.
-isquid:CommentedOutCodeLineE"<This block of commented-out lines of code should be removed.(ı‘˜´8ø®µ¾.
-Gsquid:S1148Š"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ø®µ¾.
-ksquid:S2095´"GUse try-with-resources or close this "CSVReader" in a "finally" clause.(ÔŒıôøÿÿÿÿ8ø®µ¾.
-Osquid:S1612*",Replace this lambda with a method reference.(ÁæØùÿÿÿÿ8ø®µ¾.
-nsquid:CommentedOutCodeLinev"<This block of commented-out lines of code should be removed.(Íáø¸ùÿÿÿÿ8”ï£Ã.
-esquid:S00112í"FDefine and throw a dedicated exception instead of using a generic one.(¸ÄæI8ø®µ¾.
-`squid:S1612h"=Replace this lambda with method reference 'Objects::nonNull'.(…£€úÿÿÿÿ8ø®µ¾.
-[squid:S1612b"=Replace this lambda with method reference 'Objects::nonNull'.(˜Ï¾­8ø®µ¾.
-Dsquid:S1452í"&Remove usage of generic wildcard type.(¸ÄæI8ø®µ¾.
-¤%squid:RedundantThrowsDeclarationCheckí"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(¸ÄæI8¡ñ¯Ä.
+squid:S106í"9Replace this use of System.out or System.err by a logger.(ÿ£’â8®÷Úè‚.
 \
-squid:S106ñ"9Replace this use of System.out or System.err by a logger.(åÇ›½üÿÿÿÿ8ø®µ¾.
-Lsquid:S1172„"-Remove this unused method parameter "search".(ÕåãŠ8ø®µ¾.
+squid:S106¹"9Replace this use of System.out or System.err by a logger.(åÇ›½üÿÿÿÿ8µ‚×ç‚.
+[squid:S1612Ú"=Replace this lambda with method reference 'Objects::nonNull'.(˜Á€48¿ÿ×ç‚.
+¤%squid:RedundantThrowsDeclarationCheck-"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(¦ø¯›8¤¾Äç‚.
+jsquid:CommentedOutCodeLine£"<This block of commented-out lines of code should be removed.(ı‘˜´8¿ÿ×ç‚.
+†squid:S1450*"cRemove the "programmingLanguages" field and declare it as a local variable in the relevant methods.(Şñ¤²üÿÿÿÿ8µ‚×ç‚.
+osquid:CommentedOutCodeLineİ"<This block of commented-out lines of code should be removed.(Íáø¸ùÿÿÿÿ8¿ÿ×ç‚.
+osquid:CommentedOutCodeLineÏ"<This block of commented-out lines of code should be removed.(Í±Õ±úÿÿÿÿ8‡‘Úç‚.
+|squid:UselessImportCheck"LRemove this unused import 'com.sun.org.apache.bcel.internal.generic.Select'.(°¬—üüÿÿÿÿ8ûÈæ‚.
+asquid:S1612À"=Replace this lambda with method reference 'Objects::nonNull'.(şŠàæøÿÿÿÿ8¿ÿ×ç‚.
+asquid:S1612Õ"=Replace this lambda with method reference 'Objects::nonNull'.(ûÍ³ûÿÿÿÿ8¿ÿ×ç‚.
+Xsquid:S1191"5Use classes from the Java API instead of Sun classes.(°¬—üüÿÿÿÿ8ûÈæ‚.
+Gsquid:S1148ó"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¿ÿ×ç‚.
+dsquid:S2147ò"ECombine this catch with the one at line 240, which has the same body.(ï­£Ä8¿ÿ×ç‚.
+Dsquid:S1452´"&Remove usage of generic wildcard type.(¸ÄæI8¿ÿ×ç‚.
+\
+squid:S106·"9Replace this use of System.out or System.err by a logger.(åÇ›½üÿÿÿÿ8¿ÿ×ç‚.
+Gsquid:S1148ñ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¿ÿ×ç‚.
+esquid:S00112´"FDefine and throw a dedicated exception instead of using a generic one.(¸ÄæI8¿ÿ×ç‚.
+W
+squid:S106ò"9Replace this use of System.out or System.err by a logger.(ÿ£’â8Œšßè‚.

@@ -21,3 +21,11 @@ U
 %src/main/webapp/WEB-INF/jsp/index.jsp,f/1/f16d1c46eaaabb105b651081f6c87e034b2028d2
 ^
 .src/main/java/com/example/springboot/Tags.java,d/3/d3fba8f643596e01f6a0036aec7b238f4eafd056
+w
+Gsrc/main/java/com/example/springboot/category/RefactoringLifeCycle.java,b/6/b63202d7870722f24574abc7bf30cd38ed1e1f03
+v
+Fsrc/main/java/com/example/springboot/category/TargetOfRefactoring.java,b/e/bee6f73f6e212038a4b8d7f82af0705f1e4c4cdd
+x
+Hsrc/main/java/com/example/springboot/category/RefactoringObjectives.java,8/b/8b77e63259baebfaaae02dbfe0d851f8b645713f
+w
+Gsrc/main/java/com/example/springboot/category/ProgrammingLanguages.java,3/d/3df022bb68a2c77320adad42c40448cef2c15176

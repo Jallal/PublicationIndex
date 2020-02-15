@@ -1,22 +1,27 @@
 
-ssquid:S00116ò"NRename this field "DOI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(à”úùÿÿÿÿ8Î°ÑÄ.
-nsquid:S00116Š"NRename this field "EID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£ïê8Î°ÑÄ.
-wsquid:S00116Ÿ"RRename this field "Address" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ù…èüÿÿÿÿ8Î°ÑÄ.
-osquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íìi8Î°ÑÄ.
-dsquid:S1854…"@Remove this useless assignment to local variable "authorsNames".(¨è«ÿÿÿÿÿ8Î°ÑÄ.
-vsquid:S00116"WRename this field "CustomerName" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³ŸåU8Î°ÑÄ.
-osquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íìi8Î°ÑÄ.
-Šsquid:S1845¢"fRename field "Country" to prevent any misunderstanding/clash with field "country" defined on line 268.(Ûºáİıÿÿÿÿ8Î°ÑÄ.
-tsquid:S00116‚"ORename this field "ISBN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜²ìèùÿÿÿÿ8Î°ÑÄ.
-wsquid:S00116¢"RRename this field "Country" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ûºáİıÿÿÿÿ8Î°ÑÄ.
-osquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íìi8Î°ÑÄ.
-tsquid:S00116"ORename this field "ISSN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öµî£ùÿÿÿÿ8Î°ÑÄ.
-osquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íìi8Î°ÑÄ.
-osquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íìi8Î°ÑÄ.
-osquid:S00116 "ORename this field "City" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬åê8Î°ÑÄ.
-qsquid:S00116"QRename this field "Gender" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒŸÙ8Î°ÑÄ.
-psquid:S00116ƒ"PRename this field "CODEN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë»Š”8Î°ÑÄ.
-osquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íìi8Î°ÑÄ.
-_squid:S1854~"<Remove this useless assignment to local variable "keyWords".(ÒúîÂûÿÿÿÿ8Î°ÑÄ.
-tsquid:S00116¡"URename this field "PostalCode" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾·…P8Î°ÑÄ.
-`squid:S00107"BConstructor has 42 parameters, which is greater than 7 authorized.(Íìi8Î°ÑÄ.
+psquid:S00116Ø"PRename this field "CODEN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë»Š”8Î°ÑÄ.
+asquid:S00107ç"BConstructor has 42 parameters, which is greater than 7 authorized.(Íìi8Î°ÑÄ.
+jsquid:CommentedOutCodeLine¦"<This block of commented-out lines of code should be removed.(Ñ¹¼ó8´Ç„®‚.
+„squid:S4165ô"eRemove this useless assignment; "country" already holds the assigned value along all execution paths.(úŸ¯8¿ü¤®‚.
+\squid:S1854í"=Remove this useless assignment to local variable "countries".(ÁŞ€Ö8¿ü¤®‚.
+psquid:S00117ç"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íìi8Î°ÑÄ.
+csquid:S1854Z"@Remove this useless assignment to local variable "authorsNames".(¨è«ÿÿÿÿÿ8Î°ÑÄ.
+Zsquid:S1854ô";Remove this useless assignment to local variable "country".(úŸ¯8¿ü¤®‚.
+ssquid:S00116Ç"NRename this field "DOI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(à”úùÿÿÿÿ8Î°ÑÄ.
+psquid:S00117ç"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íìi8Î°ÑÄ.
+psquid:S00117ç"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íìi8Î°ÑÄ.
+osquid:S00116¤"ORename this field "City" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬åê8Î°ÑÄ.
+_squid:S1854S"<Remove this useless assignment to local variable "keyWords".(ÒúîÂûÿÿÿÿ8Î°ÑÄ.
+osquid:CommentedOutCodeLineì"<This block of commented-out lines of code should be removed.(é‡½üÿÿÿÿ8áæ¤®‚.
+Œ"squid:ClassVariableVisibilityCheck"WMake listOfTages a static final constant or non-public and provide accessors if needed.(í©Ğ8µŠ†‚.
+vsquid:S00116¡"WRename this field "CustomerName" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³ŸåU8Î°ÑÄ.
+qsquid:S00116¢"QRename this field "Gender" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒŸÙ8Î°ÑÄ.
+psquid:S00117ç"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íìi8Î°ÑÄ.
+psquid:S00117ç"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íìi8Î°ÑÄ.
+nsquid:S00116ß"NRename this field "EID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£ïê8Î°ÑÄ.
+tsquid:S00116¥"URename this field "PostalCode" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾·…P8Î°ÑÄ.
+tsquid:S00116×"ORename this field "ISBN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜²ìèùÿÿÿÿ8Î°ÑÄ.
+Nsquid:S1656ô"/Remove or correct this useless self-assignment.(úŸ¯8¿ü¤®‚.
+wsquid:S00116£"RRename this field "Address" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ù…èüÿÿÿÿ8Î°ÑÄ.
+tsquid:S00116Ö"ORename this field "ISSN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öµî£ùÿÿÿÿ8Î°ÑÄ.
+psquid:S00117ç"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íìi8Î°ÑÄ.
