@@ -474,14 +474,10 @@
 
 <!-- Content for Popover #1 -->
 <div class="hidden" id="a1">
-    <div class="popover-heading">
-        This is the heading for #1
-    </div>
-
+    <div class="popover-heading" id="title"></div>
     <div class="popover-body">
-        This is the body for #1
-        <div>This is the heading for #2</div>
-        <div class="text-danger">This is the heading for #3</div>
+        <div class="abstract"></div>
+        <div class="keywords text-danger"></div>
     </div>
 </div>
 
@@ -548,10 +544,10 @@
               ProgrammingLanguages="Programming Languages ::: "+progLang2;
             }
 
-            var abstractVal=count+1
+            var abstractVal=count+1;
             html += '<tr>';
             // html += '<td><button class="btn btn-danger btn-xs" id="SaveChangesBtn" type="button" data-toggle="popover" data-title="Custom Title" data-trigger="manual" data-content="&lt;div&gt;This is your div content&lt;/div&gt;"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>'+abstractVal+'</button></td>';
-           html  +='<td>'+ '<a href="#"  class="btn btn-danger" tabindex="0" data-toggle="popover" data-trigger="focus" data-popover-content="#a1" data-placement="right">'+abstractVal+'</a></td>';
+           html  +='<td>'+ '<a href="'+data[count].bbstract+'" data-title="'+data[count].title+'"  id="'+RefactoringLifeCycle+'" class="popoverButton btn btn-danger" data-toggle="popover" data-trigger="focus" data-popover-content="#a1" data-placement="right">'+abstractVal+'</a></td>';
             html += '<td>' + data[count].authors + '</td>';
             html += '<td>' + data[count].title + '</td>';
             html += '<td>' + data[count].year + '</td>';
@@ -619,10 +615,37 @@
   });
 
 //test
-  $(document).on("click", '.btn', function(){
-    //alert("YO YO YO ");
 
-    event.preventDefault();
+  $(document).on("click", '.popoverButton', function(evt){
+
+        evt.preventDefault();
+  /*
+  * <div class="hidden" id="a1">
+    <div class="popover-heading" id="title">
+        This is the heading for #1
+    </div>
+
+    <div class="popover-body">
+        <div id="abstract">This is the body for #1</div>
+        <div class="text-danger" id="keywords">This is the heading for #2</div>
+    </div>
+</div>
+  * */
+  //.empty()alert("Hello");
+
+    //var clicked_button = $(this);
+    //var abstract = clicked_button.attr("href");
+    //var title = clicked_button.attr("data-title");
+//'<button class="btn btn-success cancel pull-right">Close</button>'
+    $('div.popover-heading').empty();
+    $('div.abstract').empty();
+    $('div.keywords').empty();
+
+    $('div.popover-heading').append($(this).attr("data-title"));
+    $('div.popover-heading').append('<span class="close pull-right" data-dismiss="popover-x">&times;</span>');
+    $('div.abstract').append($(this).attr("href"));
+    $('div.keywords').append("</p>"+$(this).attr("id"));
+
     $("[data-toggle=popover]").popover({
       html: true,
       content: function() {
@@ -633,7 +656,9 @@
         var title = $(this).attr("data-popover-content");
         return $(title).children(".popover-heading").html();
       }
-    });
+    }).on('shown.bs.popover', function () {
+          $popup.popover('hide');
+      });
   });
 
 
@@ -641,7 +666,7 @@
 
   $(function() {
     $(".homeSubmenu0").on("click", function(evt) {
-      event.preventDefault();
+      evt.preventDefault();
       var search = {};
       var clicked_button = $(this);
       search["category"] = clicked_button.attr("href");
@@ -655,7 +680,7 @@
   });
   $(function() {
     $(".pageSubmenu1").on("click", function(evt) {
-      event.preventDefault();
+      evt.preventDefault();
       var search = {};
       var clicked_button = $(this);
       search["category"] = clicked_button.attr("href");
@@ -664,7 +689,7 @@
   });
   $(function() {
     $(".pageSubmenu2").on("click", function(evt) {
-      event.preventDefault();
+      evt.preventDefault();
       var search = {};
       var clicked_button = $(this);
       search["category"] = clicked_button.attr("href");
@@ -673,7 +698,7 @@
   });
   $(function() {
     $(".pageSubmenu3").on("click", function(evt) {
-      event.preventDefault();
+      evt.preventDefault();
       var search = {};
       var clicked_button = $(this);
       search["category"] = clicked_button.attr("href");
@@ -683,7 +708,7 @@
 
   $(function() {
     $(".page-link").on("click", function(evt) {
-      event.preventDefault();
+      evt.preventDefault();
 
       //get the number of pages to display
       var numerOfRecords= $( "#myselect option:selected" ).text();
