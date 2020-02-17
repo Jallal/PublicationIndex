@@ -268,7 +268,7 @@
                     <th>Authors Name </th>
                     <th>Article Title</th>
                     <th>Publication year</th>
-                    <th>Keywords</th>
+                    <th>Tags</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -551,9 +551,9 @@
             html += '<td>' + data[count].authors + '</td>';
             html += '<td>' + data[count].title + '</td>';
             html += '<td>' + data[count].year + '</td>';
-            html += '<td id="a" class="text-info text-nowrap">'+RefactoringLifeCycle+'&nbsp;<br>' +
-              '<span class="text-warning text-nowrap">'+TargetOfRefactoring+'&nbsp;<br>' +
-              '</span><span class="text-danger text-nowrap">'+ProgrammingLanguages+'&nbsp;'+'</span>'+ '</td></tr>';
+            html += '<td id="a" class="text-info text-nowrap">'+refLife2+'&nbsp;<br>' +
+              '<span class="text-warning text-nowrap">'+targetRef2+'&nbsp;<br>' +
+              '</span><span class="text-danger text-nowrap">'+progLang2+'&nbsp;'+'</span>'+ '</td></tr>';
           }
 
           jQuery.getScript("css/js/pubPerYearGraph.js").done(function () {
@@ -640,10 +640,16 @@
     $('div.popover-heading').empty();
     $('div.abstract').empty();
     $('div.keywords').empty();
-
-    $('div.popover-heading').append($(this).attr("data-title"));
     $('div.popover-heading').append('<span class="close pull-right" data-dismiss="popover-x">&times;</span>');
-    $('div.abstract').append($(this).attr("href"));
+    $('div.popover-heading').append("<h6> <strong>Title : </strong>"+$(this).attr("data-title")+"<h6>");
+    $('div.abstract').append(" <strong>Abstract : </strong>"+$(this).attr("href"));
+
+     //add space
+      $('div.abstract').append("</p>");
+    //authors
+      $('div.abstract').append("<strong>Authors : We're the authors</strong>");
+
+    //keywords
     $('div.keywords').append("</p>"+$(this).attr("id"));
 
     $("[data-toggle=popover]").popover({
@@ -656,10 +662,18 @@
         var title = $(this).attr("data-popover-content");
         return $(title).children(".popover-heading").html();
       }
+
     }).on('shown.bs.popover', function () {
           $popup.popover('hide');
       });
+
+      if ($(this).prop('popShown') == undefined) {
+          $(this).prop('popShown', true).popover('show');
+      }
+      $("#a1").hide();
   });
+
+
 
 
 
