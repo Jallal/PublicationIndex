@@ -523,6 +523,7 @@
             var RefactoringLifeCycle="";
             var TargetOfRefactoring="";
             var ProgrammingLanguages="";
+            var RefactoringEvaluation="";
 
             var tags= JSON.stringify(data[count].listOfTages);
             var obj = JSON.parse(tags);
@@ -544,16 +545,24 @@
               ProgrammingLanguages="Programming Languages ::: "+progLang2;
             }
 
+            var progEvolu1=obj.RefactoringEvaluation;
+            var progEvolu2=progEvolu1.join(",");
+            if(progEvolu2){
+              ProgrammingLanguages="RefactoringEvaluation ::: "+progEvolu2;
+            }
+
             var abstractVal=count+1;
             html += '<tr>';
             // html += '<td><button class="btn btn-danger btn-xs" id="SaveChangesBtn" type="button" data-toggle="popover" data-title="Custom Title" data-trigger="manual" data-content="&lt;div&gt;This is your div content&lt;/div&gt;"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>'+abstractVal+'</button></td>';
-           html  +='<td>'+ '<a href="'+data[count].bbstract+'" data-title="'+data[count].title+'"  id="'+RefactoringLifeCycle+'" type="button" class="popoverButton btn btn-info" data-toggle="popover" data-trigger="focus" data-popover-content="#a1" data-placement="right"><span class="popoverNumber">'+abstractVal+'<span></a></td>';
+           html  +='<td>'+ '<a href="'+data[count].bbstract+'" data-title="'+data[count].title+'"  id="'+RefactoringLifeCycle+";"+TargetOfRefactoring+";"+ProgrammingLanguages+ ";"+RefactoringEvaluation+'"  type="button" class="popoverButton btn btn-info" data-toggle="popover" data-trigger="focus" data-popover-content="#a1" data-placement="right"><span class="popoverNumber">'+abstractVal+'<span></a></td>';
             html += '<td>' + data[count].authors + '</td>';
             html += '<td>' + data[count].title + '</td>';
             html += '<td>' + data[count].year + '</td>';
-            html += '<td id="a" class="text-info text-nowrap">'+refLife2+'&nbsp;<br>' +
-              '<span class="text-warning text-nowrap">'+targetRef2+'&nbsp;<br>' +
-              '</span><span class="text-danger text-nowrap">'+progLang2+'&nbsp;'+'</span>'+ '</td></tr>';
+            html += '<td id="a" >' +
+              '<span class="hideKeyWords text-nowrap text-info text-nowrap">'+refLife2+'&nbsp;<br></span>' +
+              '<span class="hideKeyWords text-nowrap text-warning text-nowrap">'+targetRef2+'&nbsp;<br></span>' +
+              '<span class="hideKeyWords text-nowrap text-primary text-nowrap">'+progEvolu2+'&nbsp;<br></span>' +
+              '<span class="hideKeyWords text-nowrap text-danger text-nowrap">'+progLang2+'&nbsp;'+'</span>'+ '</td></tr>';
           }
 
           jQuery.getScript("css/js/pubPerYearGraph.js").done(function () {

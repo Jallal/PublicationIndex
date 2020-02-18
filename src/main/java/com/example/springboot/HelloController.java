@@ -1,6 +1,7 @@
 package com.example.springboot;
 
 import com.example.springboot.category.ProgrammingLanguages;
+import com.example.springboot.category.RefactoringEvaluation;
 import com.example.springboot.category.RefactoringLifeCycle;
 import com.example.springboot.category.TargetOfRefactoring;
 import com.opencsv.CSVReader;
@@ -28,6 +29,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static com.example.springboot.category.RefactoringEvaluation.isRefactoringEvaluation;
 import static com.example.springboot.category.RefactoringLifeCycle.isRefactoringLifeCycleCategory;
 import static com.example.springboot.category.TargetOfRefactoring.isTargetOfRefactoringCategory;
 import static java.util.Map.Entry.comparingByKey;
@@ -40,6 +42,7 @@ public class HelloController {
     private RefactoringLifeCycle refactoringLifeCycle;
     private TargetOfRefactoring targetOfRefactoring;
     private ProgrammingLanguages programmingLanguages;
+    private RefactoringEvaluation refactoringEvaluation;
 
     @RequestMapping("/index")
     public String loginMessage() throws IOException {
@@ -50,10 +53,12 @@ public class HelloController {
         this.refactoringLifeCycle = new RefactoringLifeCycle();
         this.targetOfRefactoring = new TargetOfRefactoring();
         this.programmingLanguages = new ProgrammingLanguages();
+        this.refactoringEvaluation = new RefactoringEvaluation();
 
         this.refactoringLifeCycle.updateTheTagsColumInTheDataSet(this.rawData);
         this.targetOfRefactoring.updateTheTagsColumInTheDataSet(this.rawData);
         this.programmingLanguages.updateTheTagsColumInTheDataSet(this.rawData);
+        this.refactoringEvaluation.updateRefactoringEvaluation(this.rawData);
 
 
 
@@ -329,7 +334,14 @@ public class HelloController {
 
         if (null != search.getCategory()) {
 
-            if(isRefactoringLifeCycleCategory(search.getCategory())){
+            if(isRefactoringEvaluation(search.getCategory())){
+                //filter by the categories
+                data = this.refactoringEvaluation.getRefactoringEvolutionByCategory(data,search.getCategory());
+                ////put the pie data
+                String[][] publicationsPerCategory = this.refactoringEvaluation.getTheChartDataForRefactoringEvolution(data);
+                data.get(0).setPublicationsPerCategory(publicationsPerCategory);
+
+            } else if(isRefactoringLifeCycleCategory(search.getCategory())){
 
                 //filter by the categories
                 //RefactoringLifeCycle refactoringLifeCycle = new RefactoringLifeCycle();
