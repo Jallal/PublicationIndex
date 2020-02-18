@@ -3,6 +3,7 @@ package com.example.springboot;
 import com.example.springboot.category.ProgrammingLanguages;
 import com.example.springboot.category.RefactoringEvaluation;
 import com.example.springboot.category.RefactoringLifeCycle;
+import com.example.springboot.category.RefactoringObjectives;
 import com.example.springboot.category.TargetOfRefactoring;
 import com.opencsv.CSVReader;
 import com.sun.org.apache.bcel.internal.generic.Select;
@@ -31,6 +32,7 @@ import java.util.stream.Collectors;
 
 import static com.example.springboot.category.RefactoringEvaluation.isRefactoringEvaluation;
 import static com.example.springboot.category.RefactoringLifeCycle.isRefactoringLifeCycleCategory;
+import static com.example.springboot.category.RefactoringObjectives.isRefactoringObjectivesCategory;
 import static com.example.springboot.category.TargetOfRefactoring.isTargetOfRefactoringCategory;
 import static java.util.Map.Entry.comparingByKey;
 import static java.util.stream.Collectors.groupingBy;
@@ -43,6 +45,7 @@ public class HelloController {
     private TargetOfRefactoring targetOfRefactoring;
     private ProgrammingLanguages programmingLanguages;
     private RefactoringEvaluation refactoringEvaluation;
+    private RefactoringObjectives refactoringObjectives;
 
     @RequestMapping("/index")
     public String loginMessage() throws IOException {
@@ -54,11 +57,13 @@ public class HelloController {
         this.targetOfRefactoring = new TargetOfRefactoring();
         this.programmingLanguages = new ProgrammingLanguages();
         this.refactoringEvaluation = new RefactoringEvaluation();
+        this.refactoringObjectives = new RefactoringObjectives();
 
         this.refactoringLifeCycle.updateTheTagsColumInTheDataSet(this.rawData);
         this.targetOfRefactoring.updateTheTagsColumInTheDataSet(this.rawData);
         this.programmingLanguages.updateTheTagsColumInTheDataSet(this.rawData);
         this.refactoringEvaluation.updateRefactoringEvaluation(this.rawData);
+        this.refactoringObjectives.updateTheTagsColumInTheDataSet(this.rawData);
 
 
 
@@ -334,7 +339,13 @@ public class HelloController {
 
         if (null != search.getCategory()) {
 
-            if(isRefactoringEvaluation(search.getCategory())){
+            if(isRefactoringObjectivesCategory(search.getCategory())) {
+                data = this.refactoringObjectives.getRefactoringObjectivesByCategory(data,search.getCategory());
+                ////put the pie data
+                String[][] publicationsPerCategory = this.refactoringObjectives.getTheChartDataForRefactoringObjectives(data);
+                data.get(0).setPublicationsPerCategory(publicationsPerCategory);
+
+            }else if(isRefactoringEvaluation(search.getCategory())){
                 //filter by the categories
                 data = this.refactoringEvaluation.getRefactoringEvolutionByCategory(data,search.getCategory());
                 ////put the pie data

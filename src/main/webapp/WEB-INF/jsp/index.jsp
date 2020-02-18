@@ -92,7 +92,7 @@
                         <a href="C/C++" class="homeSubmenu0" >C/C++</a>
                     </li>
                     <li>
-                        <a href=">C#"  class="homeSubmenu0" >C#</a>
+                        <a href="C#"  class="homeSubmenu0" >C#</a>
                     </li>
                     <li>
                         <a href="Python"  class="homeSubmenu0" >Python</a>
@@ -520,49 +520,57 @@
         if (data.length > 0) {
 
           for (var count = 0; count < data.length; count++) {
-            var RefactoringLifeCycle="";
-            var TargetOfRefactoring="";
-            var ProgrammingLanguages="";
-            var RefactoringEvaluation="";
+            var RefactoringLifeCycle = "";
+            var TargetOfRefactoring = "";
+            var ProgrammingLanguages = "";
+            var RefactoringEvaluation = "";
+            var RefactoringObjectives = "";
 
-            var tags= JSON.stringify(data[count].listOfTages);
+            var tags = JSON.stringify(data[count].listOfTages);
             var obj = JSON.parse(tags);
-            var refLife1=obj.RefactoringLifeCycle;
-            var refLife2=refLife1.join(",");
-            if(refLife2){
-              RefactoringLifeCycle="Refactoring Life Cycle ::: "+refLife2;
+            var refLife1 = obj.RefactoringLifeCycle;
+            var refLife2 = refLife1.join(",");
+            if (refLife2) {
+              RefactoringLifeCycle = "Refactoring Life Cycle ::: " + refLife2;
             }
 
-            var targetRef1=obj.TargetOfRefactoring;
-            var targetRef2=targetRef1.join(",");
-            if(targetRef2){
-              TargetOfRefactoring="Target Of Refactoring ::: "+targetRef2;
+            var targetRef1 = obj.TargetOfRefactoring;
+            var targetRef2 = targetRef1.join(",");
+            if (targetRef2) {
+              TargetOfRefactoring = "Target Of Refactoring ::: " + targetRef2;
             }
 
-            var progLang1=obj.ProgrammingLanguages;
-            var progLang2=progLang1.join(",");
-            if(progLang2){
-              ProgrammingLanguages="Programming Languages ::: "+progLang2;
+            var progLang1 = obj.ProgrammingLanguages;
+            var progLang2 = progLang1.join(",");
+            if (progLang2) {
+              ProgrammingLanguages = "Programming Languages ::: " + progLang2;
             }
 
-            var progEvolu1=obj.RefactoringEvaluation;
-            var progEvolu2=progEvolu1.join(",");
-            if(progEvolu2){
-              ProgrammingLanguages="RefactoringEvaluation ::: "+progEvolu2;
+            var progEvolu1 = obj.RefactoringEvaluation;
+            var progEvolu2 = progEvolu1.join(",");
+            if (progEvolu2) {
+              ProgrammingLanguages = "RefactoringEvaluation ::: " + progEvolu2;
+            }
+            var progobject1 = obj.RefactoringObjectives;
+            var progobject2 = progobject1.join(",");
+            if (progobject2) {
+              ProgrammingLanguages = "RefactoringObjectives ::: " + progobject2;
             }
 
-            var abstractVal=count+1;
+            var abstractVal = count + 1;
             html += '<tr>';
             // html += '<td><button class="btn btn-danger btn-xs" id="SaveChangesBtn" type="button" data-toggle="popover" data-title="Custom Title" data-trigger="manual" data-content="&lt;div&gt;This is your div content&lt;/div&gt;"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>'+abstractVal+'</button></td>';
-           html  +='<td>'+ '<a href="'+data[count].bbstract+'" data-title="'+data[count].title+'"  id="'+RefactoringLifeCycle+";"+TargetOfRefactoring+";"+ProgrammingLanguages+ ";"+RefactoringEvaluation+'"  type="button" class="popoverButton btn btn-info" data-toggle="popover" data-trigger="focus" data-popover-content="#a1" data-placement="right"><span class="popoverNumber">'+abstractVal+'<span></a></td>';
+            html += '<td>' + '<a href="' + data[count].bbstract + '" data-title="' + data[count].title + '"  id="' + RefactoringLifeCycle + ";" + TargetOfRefactoring + ";" + ProgrammingLanguages + ";" + RefactoringEvaluation + '"  type="button" class="popoverButton btn btn-info" data-toggle="popover" data-trigger="focus" data-popover-content="#a1" data-placement="right"><span class="popoverNumber">' + abstractVal + '<span></a></td>';
             html += '<td>' + data[count].authors + '</td>';
             html += '<td>' + data[count].title + '</td>';
             html += '<td>' + data[count].year + '</td>';
             html += '<td id="a" >' +
-              '<span class="hideKeyWords text-nowrap text-info text-nowrap">'+refLife2+'&nbsp;<br></span>' +
-              '<span class="hideKeyWords text-nowrap text-warning text-nowrap">'+targetRef2+'&nbsp;<br></span>' +
+            '<span class="hideKeyWords text-nowrap text-info text-nowrap">' + refLife2 + '&nbsp;<br></span>' +
+              '<span class="hideKeyWords text-nowrap text-warning text-nowrap">' + targetRef2 + '&nbsp;<br></span>' +
               '<span class="hideKeyWords text-nowrap text-primary text-nowrap">'+progEvolu2+'&nbsp;<br></span>' +
-              '<span class="hideKeyWords text-nowrap text-danger text-nowrap">'+progLang2+'&nbsp;'+'</span>'+ '</td></tr>';
+              '<span class="hideKeyWords text-nowrap text-success text-nowrap">'+progobject2+'&nbsp;<br></span>' +
+              '<span class="hideKeyWords text-nowrap text-danger text-nowrap">' + progLang2 + '&nbsp;' + '</span>' +
+              '</td></tr>';
           }
 
           jQuery.getScript("css/js/pubPerYearGraph.js").done(function () {
@@ -659,7 +667,8 @@
       $('div.abstract').append("<strong>Authors : We're the authors</strong>");
 
     //keywords
-    $('div.keywords').append("</p>"+$(this).attr("id"));
+    var keywords = $(this).attr("id");
+    $('div.keywords').append("</p>"+keywords);
 
     $("[data-toggle=popover]").popover({
       html: true,
