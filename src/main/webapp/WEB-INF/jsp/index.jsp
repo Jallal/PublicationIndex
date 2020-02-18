@@ -547,7 +547,7 @@
             var abstractVal=count+1;
             html += '<tr>';
             // html += '<td><button class="btn btn-danger btn-xs" id="SaveChangesBtn" type="button" data-toggle="popover" data-title="Custom Title" data-trigger="manual" data-content="&lt;div&gt;This is your div content&lt;/div&gt;"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>'+abstractVal+'</button></td>';
-           html  +='<td>'+ '<a href="'+data[count].bbstract+'" data-title="'+data[count].title+'"  id="'+RefactoringLifeCycle+'" class="popoverButton btn btn-danger" data-toggle="popover" data-trigger="focus" data-popover-content="#a1" data-placement="right">'+abstractVal+'</a></td>';
+           html  +='<td>'+ '<a href="'+data[count].bbstract+'" data-title="'+data[count].title+'"  id="'+RefactoringLifeCycle+'" type="button" class="popoverButton btn btn-info" data-toggle="popover" data-trigger="focus" data-popover-content="#a1" data-placement="right"><span class="popoverNumber">'+abstractVal+'<span></a></td>';
             html += '<td>' + data[count].authors + '</td>';
             html += '<td>' + data[count].title + '</td>';
             html += '<td>' + data[count].year + '</td>';
@@ -558,7 +558,7 @@
 
           jQuery.getScript("css/js/pubPerYearGraph.js").done(function () {
             console.log("yay, all good, do something *");
-            drawChart(data[0].publicationsPerYear);
+            drawBarChart(data[0].publicationsPerYear);
           }).fail(function () {
             console.log("boo first chart failed , fall back to something else");
           });
@@ -674,10 +674,6 @@
   });
 
 
-
-
-
-
   $(function() {
     $(".homeSubmenu0").on("click", function(evt) {
       evt.preventDefault();
@@ -685,11 +681,6 @@
       var clicked_button = $(this);
       search["category"] = clicked_button.attr("href");
       fire_ajax_submit(search);
-      //test
-      var avalue = $('#a').val();
-      var newVal = avalue.replace(/^\s*[\r\n]/gm, '');
-      //var finalResults = newVal.replace("\n", "");
-      $('#a').val(newVal);
     });
   });
   $(function() {

@@ -286,6 +286,19 @@ table.table td i {
 .text-nowrap {
     white-space: nowrap;
 }
-.popover{
+.popover {
     max-width: 50%; /* Max Width of the popover (depending on the container!) */
+    background-color: #ffffff;
 }
+
+.popoverButton{
+    color: #ffffff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.popoverNumber{
+    color: #ffffff;
+}
+
+

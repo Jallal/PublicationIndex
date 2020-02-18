@@ -310,6 +310,7 @@ public class PublisherInfo {
     }
 
     public void setPublicationsPerCategory(String[][] publicationsPerCategory) {
+     
         this.publicationsPerCategory = publicationsPerCategory;
     }
 

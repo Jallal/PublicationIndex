@@ -1,14 +1,16 @@
 var value = [['Year', 'Publication'], ['2014', 1000], ['2015', 1170], ['2016', 660], ['2017', 1030]];
 google.charts.load('current', {'packages':['bar']});
-google.charts.setOnLoadCallback(drawChart);
+google.charts.setOnLoadCallback(drawBarChart);
 
-function drawChart(value) {
+function drawBarChart(value) {
   if(value.length > 0){
     // loop the outer array
 
     console.log("*****************************I'm the GRAPH and I WAS CALLED*********************************");
     console.log(value);
     console.log("**************************************************************");
+
+
     for (var i = 1; i < value.length; i++) {
       value[i][1]= parseInt(value[i][1], 10);
     }

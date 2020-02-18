@@ -101,7 +101,7 @@ public class HelloController {
 
     public String[][] getThePublicationPerYearGraphData(List<PublisherInfo> data) {
 
-        Map<String, Long> counters = data.stream().filter(i->i.getYear()!=null&&!i.getYear().isEmpty()).collect(Collectors.groupingBy(p -> p.getYear().trim(), Collectors.counting()));
+        Map<String, Long> counters = data.stream().filter(i->i.getYear()!=null&&(Integer.valueOf(i.getYear())>2005)&&!i.getYear().isEmpty()).collect(Collectors.groupingBy(p -> p.getYear().trim(), Collectors.counting()));
         Map<String, Long> countersSorted = counters
                 .entrySet()
                 .stream()
@@ -131,7 +131,7 @@ public class HelloController {
     public String[][] getThePublicationPerCountryMapData(List<PublisherInfo> data) {
 
 
-        List<String> countries = data.stream().flatMap(i->i.getCountry().stream().filter(d->d!=null &&!d.isEmpty())).collect(Collectors.toList());
+        List<String> countries = data.stream().filter(k->Integer.valueOf(k.getYear())>2005).flatMap(i->i.getCountry().stream().filter(d->d!=null &&!d.isEmpty())).collect(Collectors.toList());
         Map<String, Long> counters = countries.stream().collect(Collectors.groupingBy(p -> p, Collectors.counting()));
         Map<String, Long> countersSorted = counters
                 .entrySet()
@@ -352,6 +352,7 @@ public class HelloController {
             }
         }else {
 
+            //put the pie data
             String[][] allCategories = getAllTheCategoriesForPieChartFOrGlobalSearch(data);
             data.get(0).setPublicationsPerCategory(allCategories);
         }
@@ -362,13 +363,16 @@ public class HelloController {
 
         //put the map data
         String[][] pebPerCountryMap = getThePublicationPerCountryMapData(data);
-        System.out.print("***************************************************\n");
+        data.get(0).setPublicationsMaps(pebPerCountryMap);
+
+
+        /*System.out.print("***************************************************\n");
         for (int i=0; i< data.get(0).getPublicationsPerYear().length;i++) {
             System.out.print(data.get(0).getPublicationsPerYear()[i][0] + ":::::::::" + data.get(0).getPublicationsPerYear()[i][1] + "\n");
             //System.out.println("Publication index :"+info.getPublicationsMaps().toString() +"\n");
         }
-        System.out.print("***************************************************\n");
-        data.get(0).setPublicationsMaps(pebPerCountryMap);
+        System.out.print("***************************************************\n");*/
+
 
 
 

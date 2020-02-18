@@ -1,6 +1,6 @@
 var value = [['Country', 'Popularity'], ['Germany', 200], ['United States', 300], ['Brazil', 400], ['Canada', 500], ['France', 600], ['RU', 700]];
 google.charts.load('current', {packages: ['corechart', 'bar']});
-google.charts.setOnLoadCallback(drawMultSeries);
+google.charts.setOnLoadCallback(drawPublicationPerCountryChart);
 
 function drawPublicationPerCountryChart(value) {
   if(value.length > 0){
@@ -9,6 +9,8 @@ function drawPublicationPerCountryChart(value) {
     console.log("*****************************I'm the GRAPH and I WAS CALLED*********************************");
     console.log(value);
     console.log("**************************************************************");
+
+
     for (var i = 1; i < value.length; i++) {
       value[i][1]= parseInt(value[i][1], 10);
     }
