@@ -477,7 +477,7 @@
     <div class="popover-heading" id="title"></div>
     <div class="popover-body">
         <div class="abstract"></div>
-        <div class="keywords text-info"></div>
+        <div class="keywords"></div>
     </div>
 </div>
 
@@ -560,7 +560,7 @@
             var abstractVal = count + 1;
             html += '<tr>';
             // html += '<td><button class="btn btn-danger btn-xs" id="SaveChangesBtn" type="button" data-toggle="popover" data-title="Custom Title" data-trigger="manual" data-content="&lt;div&gt;This is your div content&lt;/div&gt;"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>'+abstractVal+'</button></td>';
-            html += '<td>' + '<a href="' + data[count].bbstract + '" data-title="' + data[count].title + '"  id="' + refLife2 + " " + targetRef2 + " " + progEvolu2 + " " + progobject2 + " "+progLang2+'"  type="button" class="popoverButton btn btn-info" data-toggle="popover" data-trigger="focus" data-popover-content="#a1" data-placement="right"><span class="popoverNumber">' + abstractVal + '<span></a></td>';
+            html += '<td>' + '<a href="' + data[count].bbstract + '" data-title="' + data[count].title + '"  id="' + refLife2 + " " + targetRef2 + " " + progEvolu2 + " " + progobject2 + " "+progLang2+'"  lang="'+data[count].authors+'" type="button" class="popoverButton btn btn-info" data-toggle="popover" data-trigger="focus" data-popover-content="#a1" data-placement="right"><span class="popoverNumber">' + abstractVal + '<span></a></td>';
             html += '<td>' + data[count].authors + '</td>';
             html += '<td>' + data[count].title + '</td>';
             html += '<td>' + data[count].year + '</td>';
@@ -671,17 +671,18 @@
     $('div.abstract').empty();
     $('div.keywords').empty();
     $('div.popover-heading').append('<span class="close pull-right" data-dismiss="popover-x">&times;</span>');
-    $('div.popover-heading').append('<h6> <span class="text-info">Title</span>' +" :" +$(this).attr("data-title")+"<h6>");
-    $('div.abstract').append('<span class="text-info">Abstract</span>'+" :"+$(this).attr("href"));
+    $('div.popover-heading').append('<h6> <span class="popoverBox">Title : </span>'+$(this).attr("data-title")+"<h6>");
+    $('div.abstract').append('<span class="popoverBox">Abstract : </span>'+$(this).attr("href"));
 
      //add space
       $('div.abstract').append("</p>");
     //authors
-      $('div.abstract').append('<span class="text-info">Authors</span>'+" : We are the authors");
+      var authors = $(this).attr("lang");
+      $('div.abstract').append('<span class="popoverBox">Authors : </span>'+authors);
 
     //keywords
     var keywords = $(this).attr("id");
-    $('div.keywords').append("</p>"+"Keywords : "+keywords+"<br>");
+    $('div.keywords').append('<span class="popoverBox">keywords : </span>'+keywords+"<br>");
     $("[data-toggle=popover]").popover({
       html: true,
       content: function() {
