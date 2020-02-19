@@ -671,13 +671,13 @@
     $('div.abstract').empty();
     $('div.keywords').empty();
     $('div.popover-heading').append('<span class="close pull-right" data-dismiss="popover-x">&times;</span>');
-    $('div.popover-heading').append("<h6> <strong>Title : </strong>"+$(this).attr("data-title")+"<h6>");
-    $('div.abstract').append(" <strong>Abstract : </strong>"+$(this).attr("href"));
+    $('div.popover-heading').append('<h6> <span class="text-info">Title</span>' +" :" +$(this).attr("data-title")+"<h6>");
+    $('div.abstract').append('<span class="text-info">Abstract</span>'+" :"+$(this).attr("href"));
 
      //add space
       $('div.abstract').append("</p>");
     //authors
-      $('div.abstract').append("<strong>Authors : We're the authors</strong>");
+      $('div.abstract').append('<span class="text-info">Authors</span>'+" : We are the authors");
 
     //keywords
     var keywords = $(this).attr("id");
