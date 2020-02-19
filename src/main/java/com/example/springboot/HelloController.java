@@ -1,12 +1,13 @@
 package com.example.springboot;
 
+import com.example.springboot.category.AppliedParadigm;
+import com.example.springboot.category.Fields;
 import com.example.springboot.category.ProgrammingLanguages;
 import com.example.springboot.category.RefactoringEvaluation;
 import com.example.springboot.category.RefactoringLifeCycle;
 import com.example.springboot.category.RefactoringObjectives;
 import com.example.springboot.category.TargetOfRefactoring;
 import com.opencsv.CSVReader;
-import com.sun.org.apache.bcel.internal.generic.Select;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.ResourceUtils;
@@ -24,7 +25,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,17 +35,18 @@ import static com.example.springboot.category.RefactoringLifeCycle.isRefactoring
 import static com.example.springboot.category.RefactoringObjectives.isRefactoringObjectivesCategory;
 import static com.example.springboot.category.TargetOfRefactoring.isTargetOfRefactoringCategory;
 import static java.util.Map.Entry.comparingByKey;
-import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toMap;
 
 @Controller
 public class HelloController {
-    private  List<PublisherInfo> rawData;
+    private List<PublisherInfo> rawData;
     private RefactoringLifeCycle refactoringLifeCycle;
     private TargetOfRefactoring targetOfRefactoring;
     private ProgrammingLanguages programmingLanguages;
     private RefactoringEvaluation refactoringEvaluation;
     private RefactoringObjectives refactoringObjectives;
+    private Fields fields;
+    private AppliedParadigm appliedParadigm;
 
     @RequestMapping("/index")
     public String loginMessage() throws IOException {
@@ -58,31 +59,30 @@ public class HelloController {
         this.programmingLanguages = new ProgrammingLanguages();
         this.refactoringEvaluation = new RefactoringEvaluation();
         this.refactoringObjectives = new RefactoringObjectives();
+        this.fields = new Fields();
+        this.appliedParadigm = new AppliedParadigm();
 
         this.refactoringLifeCycle.updateTheTagsColumInTheDataSet(this.rawData);
         this.targetOfRefactoring.updateTheTagsColumInTheDataSet(this.rawData);
         this.programmingLanguages.updateTheTagsColumInTheDataSet(this.rawData);
         this.refactoringEvaluation.updateRefactoringEvaluation(this.rawData);
         this.refactoringObjectives.updateTheTagsColumInTheDataSet(this.rawData);
-
-
-
+        this.fields.updateTheTagsColumInTheDataSet(this.rawData);
+        this.appliedParadigm.updateTheTagsColumInTheDataSet(this.rawData);
         return "index";
     }
 
 
-
-
     public String[][] getAllTheCategoriesForPieChartFOrGlobalSearch(List<PublisherInfo> newdata) {
 
-         List<String> alltages = new ArrayList<>();
-         for(PublisherInfo element : newdata ) {
-             for (Map.Entry<String, List<String>> entry : element.getListOfTages().entrySet()) {
-                 alltages.add(entry.getKey());
-             }
-         }
+        List<String> alltages = new ArrayList<>();
+        for (PublisherInfo element : newdata) {
+            for (Map.Entry<String, List<String>> entry : element.getListOfTages().entrySet()) {
+                alltages.add(entry.getKey());
+            }
+        }
 
-        Map<String, Long> counters =  alltages.stream().collect(Collectors.groupingBy(p -> p, Collectors.counting()));
+        Map<String, Long> counters = alltages.stream().collect(Collectors.groupingBy(p -> p, Collectors.counting()));
         Map<String, Long> countersSorted = counters
                 .entrySet()
                 .stream()
@@ -91,7 +91,7 @@ public class HelloController {
                         toMap(Map.Entry::getKey, Map.Entry::getValue,
                                 (e1, e2) -> e2, LinkedHashMap::new));
 
-        int arraySize = countersSorted.size()+1;
+        int arraySize = countersSorted.size() + 1;
         String[][] pebPerYear = new String[arraySize][2];
         pebPerYear[0][0] = "Task";
         pebPerYear[0][1] = "Hours per Day";
@@ -111,7 +111,7 @@ public class HelloController {
 
     public String[][] getThePublicationPerYearGraphData(List<PublisherInfo> data) {
 
-        Map<String, Long> counters = data.stream().filter(i->i.getYear()!=null&&(Integer.valueOf(i.getYear())>2005)&&!i.getYear().isEmpty()).collect(Collectors.groupingBy(p -> p.getYear().trim(), Collectors.counting()));
+        Map<String, Long> counters = data.stream().filter(i -> i.getYear() != null && (Integer.valueOf(i.getYear()) > 2005) && !i.getYear().isEmpty()).collect(Collectors.groupingBy(p -> p.getYear().trim(), Collectors.counting()));
         Map<String, Long> countersSorted = counters
                 .entrySet()
                 .stream()
@@ -120,7 +120,7 @@ public class HelloController {
                         toMap(Map.Entry::getKey, Map.Entry::getValue,
                                 (e1, e2) -> e2, LinkedHashMap::new));
 
-        int arraySize = countersSorted.size()+1;
+        int arraySize = countersSorted.size() + 1;
         String[][] pebPerYear = new String[arraySize][2];
         pebPerYear[0][0] = "year";
         pebPerYear[0][1] = "Publication";
@@ -141,7 +141,7 @@ public class HelloController {
     public String[][] getThePublicationPerCountryMapData(List<PublisherInfo> data) {
 
 
-        List<String> countries = data.stream().filter(k->Integer.valueOf(k.getYear())>2005).flatMap(i->i.getCountry().stream().filter(d->d!=null &&!d.isEmpty())).collect(Collectors.toList());
+        List<String> countries = data.stream().filter(k -> Integer.valueOf(k.getYear()) > 2005).flatMap(i -> i.getCountry().stream().filter(d -> d != null && !d.isEmpty())).collect(Collectors.toList());
         Map<String, Long> counters = countries.stream().collect(Collectors.groupingBy(p -> p, Collectors.counting()));
         Map<String, Long> countersSorted = counters
                 .entrySet()
@@ -151,7 +151,7 @@ public class HelloController {
                         toMap(Map.Entry::getKey, Map.Entry::getValue,
                                 (e1, e2) -> e2, LinkedHashMap::new));
 
-        int arraySize = countersSorted.size()+1;
+        int arraySize = countersSorted.size() + 1;
         String[][] pebPerYear = new String[arraySize][2];
         pebPerYear[0][0] = "Country";
         pebPerYear[0][1] = "Publication";
@@ -197,14 +197,14 @@ public class HelloController {
         return pebPerCategory;
     }*/
 
-   public List<PublisherInfo>searchByAny(List<PublisherInfo> data, String filter){
+    public List<PublisherInfo> searchByAny(List<PublisherInfo> data, String filter) {
 
-       return data.stream().filter(e -> e != null).filter(i -> i.getTitle().toLowerCase().contains(filter.toLowerCase())
-              || i.getBbstract().toLowerCase().contains(filter.toLowerCase())
-               || i.getAuthors().toLowerCase().contains(filter.toLowerCase())
-       ).collect(Collectors.toList());
+        return data.stream().filter(e -> e != null).filter(i -> i.getTitle().toLowerCase().contains(filter.toLowerCase())
+                || i.getBbstract().toLowerCase().contains(filter.toLowerCase())
+                || i.getAuthors().toLowerCase().contains(filter.toLowerCase())
+        ).collect(Collectors.toList());
 
-   }
+    }
 
     public List<PublisherInfo> searchByPublicationTitle(List<PublisherInfo> data, String filter) {
 
@@ -316,7 +316,7 @@ public class HelloController {
 
     @PostMapping("/api/search")
     public ResponseEntity<?> getSearchResultViaAjax(@Valid @RequestBody SearchCriteria search, Errors errors) throws Exception {
-        List<PublisherInfo> data =this.rawData;
+        List<PublisherInfo> data = this.rawData;
 
         System.out.print("******************************************************\n");
         System.out.print(search.toString());
@@ -325,7 +325,7 @@ public class HelloController {
 
         if (null != search.getAuthorName() && search.getSearch().equalsIgnoreCase("Select search criteria")) {
             data = searchByAny(data, search.getAuthorName());
-        }else if (null != search.getAuthorName() && search.getSearch().equalsIgnoreCase("name")) {
+        } else if (null != search.getAuthorName() && search.getSearch().equalsIgnoreCase("name")) {
             data = searchByAuthorName(data, search.getAuthorName());
         } else if (null != search.getAuthorName() && search.getSearch().equalsIgnoreCase("category")) {
             data = searchByTagName(data, search.getAuthorName());
@@ -338,42 +338,58 @@ public class HelloController {
 
 
         if (null != search.getCategory()) {
+            if(ProgrammingLanguages.isProgrammingLanguages(search.getCategory())){
+                data = this.programmingLanguages.getProgrammingLanguageByCategory(data, search.getCategory());
+                ////put the pie data
+                String[][] publicationsPerCategory = this.programmingLanguages.getTheChartDataForProgrammingLanguages(data);
+                data.get(0).setPublicationsPerCategory(publicationsPerCategory);
 
-            if(isRefactoringObjectivesCategory(search.getCategory())) {
-                data = this.refactoringObjectives.getRefactoringObjectivesByCategory(data,search.getCategory());
+            } else if (AppliedParadigm.isAppliedParadigmCategory(search.getCategory())) {
+                data = this.appliedParadigm.getAppliedParadigmByCategory(data, search.getCategory());
+                ////put the pie data
+                String[][] publicationsPerCategory = this.appliedParadigm.getTheChartDataForAppliedParadim(data);
+                data.get(0).setPublicationsPerCategory(publicationsPerCategory);
+
+            } else if (Fields.isFieldsCategory(search.getCategory())) {
+                data = this.fields.getRefactoringObjectivesByCategory(data, search.getCategory());
+                ////put the pie data
+                String[][] publicationsPerCategory = this.fields.getTheChartDataForFields(data);
+                data.get(0).setPublicationsPerCategory(publicationsPerCategory);
+            } else if (isRefactoringObjectivesCategory(search.getCategory())) {
+                data = this.refactoringObjectives.getRefactoringObjectivesByCategory(data, search.getCategory());
                 ////put the pie data
                 String[][] publicationsPerCategory = this.refactoringObjectives.getTheChartDataForRefactoringObjectives(data);
                 data.get(0).setPublicationsPerCategory(publicationsPerCategory);
 
-            }else if(isRefactoringEvaluation(search.getCategory())){
+            } else if (isRefactoringEvaluation(search.getCategory())) {
                 //filter by the categories
-                data = this.refactoringEvaluation.getRefactoringEvolutionByCategory(data,search.getCategory());
+                data = this.refactoringEvaluation.getRefactoringEvolutionByCategory(data, search.getCategory());
                 ////put the pie data
                 String[][] publicationsPerCategory = this.refactoringEvaluation.getTheChartDataForRefactoringEvolution(data);
                 data.get(0).setPublicationsPerCategory(publicationsPerCategory);
 
-            } else if(isRefactoringLifeCycleCategory(search.getCategory())){
+            } else if (isRefactoringLifeCycleCategory(search.getCategory())) {
 
                 //filter by the categories
                 //RefactoringLifeCycle refactoringLifeCycle = new RefactoringLifeCycle();
-                data =  this.refactoringLifeCycle.getRefactoringByCategory(data,search.getCategory());
+                data = this.refactoringLifeCycle.getRefactoringByCategory(data, search.getCategory());
 
                 ////put the pie data
                 String[][] publicationsPerCategory = refactoringLifeCycle.getTheChartDataForRefactoring(data);
                 data.get(0).setPublicationsPerCategory(publicationsPerCategory);
 
-            }else if(isTargetOfRefactoringCategory(search.getCategory())){
+            } else if (isTargetOfRefactoringCategory(search.getCategory())) {
 
                 //filter by the categories
                 //TargetOfRefactoring targetOfRefactoring = new TargetOfRefactoring();
-                data =  this.targetOfRefactoring.getRefactoringByCategory(data,search.getCategory());
+                data = this.targetOfRefactoring.getRefactoringByCategory(data, search.getCategory());
 
                 //put the pie data
                 String[][] publicationsPerCategory = targetOfRefactoring.getTheChartDataForRefactoring(data);
                 data.get(0).setPublicationsPerCategory(publicationsPerCategory);
 
             }
-        }else {
+        } else {
 
             //put the pie data
             String[][] allCategories = getAllTheCategoriesForPieChartFOrGlobalSearch(data);
@@ -395,8 +411,6 @@ public class HelloController {
             //System.out.println("Publication index :"+info.getPublicationsMaps().toString() +"\n");
         }
         System.out.print("***************************************************\n");*/
-
-
 
 
         AjaxResponseBody result = new AjaxResponseBody();

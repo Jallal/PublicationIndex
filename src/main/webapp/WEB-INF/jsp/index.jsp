@@ -525,6 +525,8 @@
             var ProgrammingLanguages = "";
             var RefactoringEvaluation = "";
             var RefactoringObjectives = "";
+            var Fields="";
+            var AppliedParadigm="";
 
             var tags = JSON.stringify(data[count].listOfTages);
             var obj = JSON.parse(tags);
@@ -557,10 +559,23 @@
                 RefactoringObjectives = "RefactoringObjectives ::: " + progobject2;
             }
 
+            var fields1 = obj.Fields;
+            var fields2 = fields1.join(",");
+            if (fields2) {
+              Fields = "Fields ::: " + fields2;
+            }
+
+            var appliedpa1 = obj.AppliedParadigm;
+            var appliedpa2 = appliedpa1.join(",");
+            if (appliedpa2) {
+              AppliedParadigm = "AppliedParadigm ::: " + appliedpa2;
+            }
+
+
             var abstractVal = count + 1;
             html += '<tr>';
             // html += '<td><button class="btn btn-danger btn-xs" id="SaveChangesBtn" type="button" data-toggle="popover" data-title="Custom Title" data-trigger="manual" data-content="&lt;div&gt;This is your div content&lt;/div&gt;"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>'+abstractVal+'</button></td>';
-            html += '<td>' + '<a href="' + data[count].bbstract + '" data-title="' + data[count].title + '"  id="' + refLife2 + " " + targetRef2 + " " + progEvolu2 + " " + progobject2 + " "+progLang2+'"  lang="'+data[count].authors+'" type="button" class="popoverButton btn btn-info" data-toggle="popover" data-trigger="focus" data-popover-content="#a1" data-placement="right"><span class="popoverNumber">' + abstractVal + '<span></a></td>';
+            html += '<td>' + '<a href="' + data[count].bbstract + '" data-title="' + data[count].title + '"  id="' + refLife2 + " " + targetRef2 + " " + progEvolu2 + " " + progobject2 + " "+progLang2+" "+fields2+ " "+appliedpa2+'"  lang="'+data[count].authors+'" type="button" class="popoverButton btn btn-info" data-toggle="popover" data-trigger="focus" data-popover-content="#a1" data-placement="right"><span class="popoverNumber">' + abstractVal + '<span></a></td>';
             html += '<td>' + data[count].authors + '</td>';
             html += '<td>' + data[count].title + '</td>';
             html += '<td>' + data[count].year + '</td>';
@@ -569,7 +584,9 @@
               '<span class="hideKeyWords1 text-nowrap text-warning text-nowrap">' + targetRef2 + '&nbsp;<br></span>' +
               '<span class="hideKeyWords2 text-nowrap text-primary text-nowrap">'+progEvolu2+'&nbsp;<br></span>' +
               '<span class="hideKeyWords3 text-nowrap text-success text-nowrap">'+progobject2+'&nbsp;<br></span>' +
-              '<span class="hideKeyWords4 text-nowrap text-danger text-nowrap">' + progLang2 + '&nbsp;' + '</span>' +
+              '<span class="hideKeyWords4 text-nowrap text-danger text-nowrap">' + progLang2 + '&nbsp;<br></span>' +
+              '<span class="hideKeyWords4 text-nowrap text-secondary text-nowrap">' + fields2 + '&nbsp;<br></span>' +
+              '<span class="hideKeyWords4 text-nowrap text-dark text-nowrap">' + appliedpa2 + '&nbsp;</span>' +
               '</td></tr>';
 
           }
