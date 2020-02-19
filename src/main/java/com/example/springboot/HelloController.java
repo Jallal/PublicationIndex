@@ -78,7 +78,9 @@ public class HelloController {
         List<String> alltages = new ArrayList<>();
         for (PublisherInfo element : newdata) {
             for (Map.Entry<String, List<String>> entry : element.getListOfTages().entrySet()) {
-                alltages.add(entry.getKey());
+                if(!entry.getValue().isEmpty()) {
+                   alltages.add(entry.getKey());
+                }
             }
         }
 
