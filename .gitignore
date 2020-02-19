@@ -3,8 +3,8 @@
 **/.project
 **/.classpath
 **/.settings
-.idea/
+.idea/*
+.idea
 output.txt
 lib-sms-arxanagent.jar
 service/work/*
-service/derby.log

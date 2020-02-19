@@ -477,7 +477,7 @@
     <div class="popover-heading" id="title"></div>
     <div class="popover-body">
         <div class="abstract"></div>
-        <div class="keywords text-danger"></div>
+        <div class="keywords text-info"></div>
     </div>
 </div>
 
@@ -549,28 +549,29 @@
             var progEvolu1 = obj.RefactoringEvaluation;
             var progEvolu2 = progEvolu1.join(",");
             if (progEvolu2) {
-              ProgrammingLanguages = "RefactoringEvaluation ::: " + progEvolu2;
+                RefactoringEvaluation = "RefactoringEvaluation ::: " + progEvolu2;
             }
             var progobject1 = obj.RefactoringObjectives;
             var progobject2 = progobject1.join(",");
             if (progobject2) {
-              ProgrammingLanguages = "RefactoringObjectives ::: " + progobject2;
+                RefactoringObjectives = "RefactoringObjectives ::: " + progobject2;
             }
 
             var abstractVal = count + 1;
             html += '<tr>';
             // html += '<td><button class="btn btn-danger btn-xs" id="SaveChangesBtn" type="button" data-toggle="popover" data-title="Custom Title" data-trigger="manual" data-content="&lt;div&gt;This is your div content&lt;/div&gt;"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>'+abstractVal+'</button></td>';
-            html += '<td>' + '<a href="' + data[count].bbstract + '" data-title="' + data[count].title + '"  id="' + RefactoringLifeCycle + ";" + TargetOfRefactoring + ";" + ProgrammingLanguages + ";" + RefactoringEvaluation + '"  type="button" class="popoverButton btn btn-info" data-toggle="popover" data-trigger="focus" data-popover-content="#a1" data-placement="right"><span class="popoverNumber">' + abstractVal + '<span></a></td>';
+            html += '<td>' + '<a href="' + data[count].bbstract + '" data-title="' + data[count].title + '"  id="' + refLife2 + " " + targetRef2 + " " + progEvolu2 + " " + progobject2 + " "+progLang2+'"  type="button" class="popoverButton btn btn-info" data-toggle="popover" data-trigger="focus" data-popover-content="#a1" data-placement="right"><span class="popoverNumber">' + abstractVal + '<span></a></td>';
             html += '<td>' + data[count].authors + '</td>';
             html += '<td>' + data[count].title + '</td>';
             html += '<td>' + data[count].year + '</td>';
             html += '<td id="a" >' +
             '<span class="hideKeyWords text-nowrap text-info text-nowrap">' + refLife2 + '&nbsp;<br></span>' +
-              '<span class="hideKeyWords text-nowrap text-warning text-nowrap">' + targetRef2 + '&nbsp;<br></span>' +
-              '<span class="hideKeyWords text-nowrap text-primary text-nowrap">'+progEvolu2+'&nbsp;<br></span>' +
-              '<span class="hideKeyWords text-nowrap text-success text-nowrap">'+progobject2+'&nbsp;<br></span>' +
-              '<span class="hideKeyWords text-nowrap text-danger text-nowrap">' + progLang2 + '&nbsp;' + '</span>' +
+              '<span class="hideKeyWords1 text-nowrap text-warning text-nowrap">' + targetRef2 + '&nbsp;<br></span>' +
+              '<span class="hideKeyWords2 text-nowrap text-primary text-nowrap">'+progEvolu2+'&nbsp;<br></span>' +
+              '<span class="hideKeyWords3 text-nowrap text-success text-nowrap">'+progobject2+'&nbsp;<br></span>' +
+              '<span class="hideKeyWords4 text-nowrap text-danger text-nowrap">' + progLang2 + '&nbsp;' + '</span>' +
               '</td></tr>';
+
           }
 
           jQuery.getScript("css/js/pubPerYearGraph.js").done(function () {
@@ -605,6 +606,18 @@
           html = '<tr><td colspan="5">No Data Found</td></tr>';
         }
         $('tbody').html(html);
+
+        //will clear all the empty DIVs with the following classes
+          (function ($) {
+              $(document).ready(function(){
+                  console.log( 'Before: ', $('div') );
+                  $('.hideKeyWords, .hideKeyWords1, .hideKeyWords2, .hideKeyWords3,.hideKeyWords4').filter(function() {
+                      return $.trim($(this).text()) === '';
+                  }).remove();
+                  console.log( 'After: %%%%%%%%%%%%%%%%%', $('div') );
+              });
+          })(jQuery);
+
         //get the number of pages to display
         var numerOfRecords = $( "#myselect option:selected" ).text();
         //show only certain number
@@ -668,8 +681,7 @@
 
     //keywords
     var keywords = $(this).attr("id");
-    $('div.keywords').append("</p>"+keywords);
-
+    $('div.keywords').append("</p>"+"Keywords : "+keywords+"<br>");
     $("[data-toggle=popover]").popover({
       html: true,
       content: function() {
