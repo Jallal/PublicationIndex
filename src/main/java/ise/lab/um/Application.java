@@ -1,4 +1,4 @@
-package com.example.springboot;
+package ise.lab.um;
 
 import java.util.Arrays;
 

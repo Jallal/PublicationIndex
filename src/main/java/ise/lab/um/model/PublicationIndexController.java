@@ -1,12 +1,12 @@
-package com.example.springboot;
+package ise.lab.um.model;
 
-import com.example.springboot.category.AppliedParadigm;
-import com.example.springboot.category.Fields;
-import com.example.springboot.category.ProgrammingLanguages;
-import com.example.springboot.category.RefactoringEvaluation;
-import com.example.springboot.category.RefactoringLifeCycle;
-import com.example.springboot.category.RefactoringObjectives;
-import com.example.springboot.category.TargetOfRefactoring;
+import ise.lab.um.category.AppliedParadigm;
+import ise.lab.um.category.Fields;
+import ise.lab.um.category.ProgrammingLanguages;
+import ise.lab.um.category.RefactoringEvaluation;
+import ise.lab.um.category.RefactoringLifeCycle;
+import ise.lab.um.category.RefactoringObjectives;
+import ise.lab.um.category.TargetOfRefactoring;
 import com.opencsv.CSVReader;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -30,15 +30,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static com.example.springboot.category.RefactoringEvaluation.isRefactoringEvaluation;
-import static com.example.springboot.category.RefactoringLifeCycle.isRefactoringLifeCycleCategory;
-import static com.example.springboot.category.RefactoringObjectives.isRefactoringObjectivesCategory;
-import static com.example.springboot.category.TargetOfRefactoring.isTargetOfRefactoringCategory;
+import static ise.lab.um.category.RefactoringLifeCycle.isRefactoringLifeCycleCategory;
 import static java.util.Map.Entry.comparingByKey;
 import static java.util.stream.Collectors.toMap;
 
 @Controller
-public class HelloController {
+public class PublicationIndexController {
     private List<PublisherInfo> rawData;
     private RefactoringLifeCycle refactoringLifeCycle;
     private TargetOfRefactoring targetOfRefactoring;
@@ -48,7 +45,7 @@ public class HelloController {
     private Fields fields;
     private AppliedParadigm appliedParadigm;
 
-    @RequestMapping("/index")
+    @RequestMapping("/summary")
     public String loginMessage() throws IOException {
         this.rawData = fetchTheSearchData();
         this.rawData.sort(
@@ -61,7 +58,6 @@ public class HelloController {
         this.refactoringObjectives = new RefactoringObjectives();
         this.fields = new Fields();
         this.appliedParadigm = new AppliedParadigm();
-
         this.refactoringLifeCycle.updateTheTagsColumInTheDataSet(this.rawData);
         this.targetOfRefactoring.updateTheTagsColumInTheDataSet(this.rawData);
         this.programmingLanguages.updateTheTagsColumInTheDataSet(this.rawData);
@@ -69,7 +65,8 @@ public class HelloController {
         this.refactoringObjectives.updateTheTagsColumInTheDataSet(this.rawData);
         this.fields.updateTheTagsColumInTheDataSet(this.rawData);
         this.appliedParadigm.updateTheTagsColumInTheDataSet(this.rawData);
-        return "index";
+
+        return "summary";
     }
 
 
@@ -113,7 +110,7 @@ public class HelloController {
 
     public String[][] getThePublicationPerYearGraphData(List<PublisherInfo> data) {
 
-        Map<String, Long> counters = data.stream().filter(i -> i.getYear() != null && (Integer.valueOf(i.getYear()) > 2005) && !i.getYear().isEmpty()).collect(Collectors.groupingBy(p -> p.getYear().trim(), Collectors.counting()));
+        Map<String, Long> counters = data.stream().filter(d->d!=null).filter(i -> i.getYear() != null && (Integer.valueOf(i.getYear()) > 2005) && !i.getYear().isEmpty()).collect(Collectors.groupingBy(p -> p.getYear().trim(), Collectors.counting()));
         Map<String, Long> countersSorted = counters
                 .entrySet()
                 .stream()
@@ -171,41 +168,18 @@ public class HelloController {
     }
 
 
-
-   /* public String[][] getTheChartData(List<PublisherInfo> newdata) {
-
-        List<String> allCategories = new ArrayList<>();
-        for (PublisherInfo element : newdata) {
-            for (String category : element.getAuthorKeywordsAsList()) {
-                allCategories.add(category.trim());
-            }
-        }
-
-        Map<String, Long> categoriesMap = allCategories.stream().filter(e -> e != null && !e.isEmpty()).collect(Collectors.groupingBy(p -> p, Collectors.counting()));
-        int arraySize = categoriesMap.size();
-        String[][] pebPerCategory = new String[arraySize][2];
-        pebPerCategory[0][0] = "Task";
-        pebPerCategory[0][1] = "Hours per Day";
-        int count = 1;
-        for (Map.Entry<String, Long> entry : categoriesMap.entrySet()) {
-            if (count < arraySize) {
-                pebPerCategory[count][0] = entry.getKey();
-                pebPerCategory[count][1] = String.valueOf(entry.getValue());
-            }
-            count++;
-
-        }
-
-        return pebPerCategory;
-    }*/
-
-    public List<PublisherInfo> searchByAny(List<PublisherInfo> data, String filter) {
+    public List<PublisherInfo> searchByAll(List<PublisherInfo> data, String filter) {
 
         return data.stream().filter(e -> e != null).filter(i -> i.getTitle().toLowerCase().contains(filter.toLowerCase())
                 || i.getBbstract().toLowerCase().contains(filter.toLowerCase())
                 || i.getAuthors().toLowerCase().contains(filter.toLowerCase())
         ).collect(Collectors.toList());
 
+    }
+
+    public List<PublisherInfo> searchByAny(List<PublisherInfo> data) {
+
+        return data.stream().filter(e -> e != null).collect(Collectors.toList());
     }
 
     public List<PublisherInfo> searchByPublicationTitle(List<PublisherInfo> data, String filter) {
@@ -230,20 +204,6 @@ public class HelloController {
         return data.stream().filter(e -> e != null).filter(i -> i.getPublisher().toLowerCase().contains(filter.toLowerCase())).collect(Collectors.toList());
     }
 
-    /*public List<PublisherInfo> filterByTags(List<PublisherInfo> data, String filter) {
-
-        if(isRefactoringLifeCycleCategory(filter)){
-            RefactoringLifeCycle refactoringLifeCycle = new RefactoringLifeCycle();
-            return  refactoringLifeCycle.getRefactoringByCategory(data,filter);
-
-        }else if(isTargetOfRefactoringCategory(filter)){
-            TargetOfRefactoring targetOfRefactoring = new TargetOfRefactoring();
-            return targetOfRefactoring.getRefactoringByCategory(data,filter);
-
-        }
-
-    }*/
-
     public List<PublisherInfo> fetchTheSearchData() {
         List<PublisherInfo> data = new ArrayList<>();
         String filename = "papersPreprocessed.csv";
@@ -258,13 +218,11 @@ public class HelloController {
     }
 
     public List<PublisherInfo> readTheDataFromVCS(String csvFile) throws IOException {
-
         File file = ResourceUtils.getFile("classpath:" + csvFile);
         CSVReader csvReader = new CSVReader(new InputStreamReader(new FileInputStream(file)));
         List<PublisherInfo> publishRecords = new ArrayList<>();
-        while ((csvReader.readNext()) != null) {
-
-            String[] values = csvReader.readNext();
+        String[] values = (csvReader.readNext());
+        while (values != null) {
             List<String> recordsString = Arrays.asList(values);
             PublisherInfo publisherInfo = new PublisherInfo(
                     recordsString.get(0),
@@ -310,23 +268,18 @@ public class HelloController {
                     recordsString.get(40),
                     recordsString.get(41));
             publishRecords.add(publisherInfo);
+            values = csvReader.readNext();
         }
-
-
+        publishRecords.remove(0);
         return publishRecords;
     }
 
     @PostMapping("/api/search")
     public ResponseEntity<?> getSearchResultViaAjax(@Valid @RequestBody SearchCriteria search, Errors errors) throws Exception {
+
         List<PublisherInfo> data = this.rawData;
-
-        System.out.print("******************************************************\n");
-        System.out.print(search.toString());
-        System.out.print("******************************************************\n");
-
-
-        if (null != search.getAuthorName() && search.getSearch().equalsIgnoreCase("Select search criteria")) {
-            data = searchByAny(data, search.getAuthorName());
+        if (null != search.getAuthorName() && search.getSearch().equalsIgnoreCase("all")) {
+            data = searchByAll(data,search.getAuthorName());
         } else if (null != search.getAuthorName() && search.getSearch().equalsIgnoreCase("name")) {
             data = searchByAuthorName(data, search.getAuthorName());
         } else if (null != search.getAuthorName() && search.getSearch().equalsIgnoreCase("category")) {
@@ -337,84 +290,60 @@ public class HelloController {
             data = searchByPublicationTitle(data, search.getAuthorName());
 
         }
-
-
         if (null != search.getCategory()) {
             if(ProgrammingLanguages.isProgrammingLanguages(search.getCategory())){
                 data = this.programmingLanguages.getProgrammingLanguageByCategory(data, search.getCategory());
-                ////put the pie data
                 String[][] publicationsPerCategory = this.programmingLanguages.getTheChartDataForProgrammingLanguages(data);
                 data.get(0).setPublicationsPerCategory(publicationsPerCategory);
 
             } else if (AppliedParadigm.isAppliedParadigmCategory(search.getCategory())) {
+
                 data = this.appliedParadigm.getAppliedParadigmByCategory(data, search.getCategory());
-                ////put the pie data
                 String[][] publicationsPerCategory = this.appliedParadigm.getTheChartDataForAppliedParadim(data);
                 data.get(0).setPublicationsPerCategory(publicationsPerCategory);
 
             } else if (Fields.isFieldsCategory(search.getCategory())) {
+
                 data = this.fields.getRefactoringObjectivesByCategory(data, search.getCategory());
-                ////put the pie data
                 String[][] publicationsPerCategory = this.fields.getTheChartDataForFields(data);
                 data.get(0).setPublicationsPerCategory(publicationsPerCategory);
-            } else if (isRefactoringObjectivesCategory(search.getCategory())) {
+            } else if (RefactoringObjectives.isRefactoringObjectivesCategory(search.getCategory())) {
+
                 data = this.refactoringObjectives.getRefactoringObjectivesByCategory(data, search.getCategory());
-                ////put the pie data
                 String[][] publicationsPerCategory = this.refactoringObjectives.getTheChartDataForRefactoringObjectives(data);
                 data.get(0).setPublicationsPerCategory(publicationsPerCategory);
 
-            } else if (isRefactoringEvaluation(search.getCategory())) {
-                //filter by the categories
+            } else if (RefactoringEvaluation.isRefactoringEvaluation(search.getCategory())) {
+
                 data = this.refactoringEvaluation.getRefactoringEvolutionByCategory(data, search.getCategory());
-                ////put the pie data
                 String[][] publicationsPerCategory = this.refactoringEvaluation.getTheChartDataForRefactoringEvolution(data);
                 data.get(0).setPublicationsPerCategory(publicationsPerCategory);
 
             } else if (isRefactoringLifeCycleCategory(search.getCategory())) {
 
-                //filter by the categories
-                //RefactoringLifeCycle refactoringLifeCycle = new RefactoringLifeCycle();
                 data = this.refactoringLifeCycle.getRefactoringByCategory(data, search.getCategory());
-
-                ////put the pie data
                 String[][] publicationsPerCategory = refactoringLifeCycle.getTheChartDataForRefactoring(data);
                 data.get(0).setPublicationsPerCategory(publicationsPerCategory);
 
-            } else if (isTargetOfRefactoringCategory(search.getCategory())) {
+            } else if (TargetOfRefactoring.isTargetOfRefactoringCategory(search.getCategory())) {
 
-                //filter by the categories
-                //TargetOfRefactoring targetOfRefactoring = new TargetOfRefactoring();
                 data = this.targetOfRefactoring.getRefactoringByCategory(data, search.getCategory());
-
-                //put the pie data
                 String[][] publicationsPerCategory = targetOfRefactoring.getTheChartDataForRefactoring(data);
                 data.get(0).setPublicationsPerCategory(publicationsPerCategory);
-
             }
         } else {
-
-            //put the pie data
+            data = searchByAny(data);
             String[][] allCategories = getAllTheCategoriesForPieChartFOrGlobalSearch(data);
             data.get(0).setPublicationsPerCategory(allCategories);
         }
 
-        //put the publication per year graph data
+
         String[][] pebPerYear = getThePublicationPerYearGraphData(data);
         data.get(0).setPublicationsPerYear(pebPerYear);
 
         //put the map data
         String[][] pebPerCountryMap = getThePublicationPerCountryMapData(data);
         data.get(0).setPublicationsMaps(pebPerCountryMap);
-
-
-        /*System.out.print("***************************************************\n");
-        for (int i=0; i< data.get(0).getPublicationsPerYear().length;i++) {
-            System.out.print(data.get(0).getPublicationsPerYear()[i][0] + ":::::::::" + data.get(0).getPublicationsPerYear()[i][1] + "\n");
-            //System.out.println("Publication index :"+info.getPublicationsMaps().toString() +"\n");
-        }
-        System.out.print("***************************************************\n");*/
-
-
         AjaxResponseBody result = new AjaxResponseBody();
         result.setMsg("success");
         result.setResult(data);

@@ -1,6 +1,4 @@
-package com.example.springboot;
-
-import javax.validation.constraints.NotBlank;
+package ise.lab.um.model;
 
 public class SearchCriteria {
 
@@ -10,7 +8,7 @@ public class SearchCriteria {
     private String category;
     private int pageShowing;
     private int nuberOfRecords;
-    private Tags tags;
+
 
     public int getPageShowing() {
         return pageShowing;
@@ -26,14 +24,6 @@ public class SearchCriteria {
 
     public void setNuberOfRecords(int nuberOfRecords) {
         this.nuberOfRecords = nuberOfRecords;
-    }
-
-    public Tags getTags() {
-        return tags;
-    }
-
-    public void setTags(Tags tags) {
-        this.tags = tags;
     }
 
     public String getAuthorName() {
@@ -69,7 +59,6 @@ public class SearchCriteria {
                 ", category='" + category + '\'' +
                 ", pageShowing=" + pageShowing +
                 ", nuberOfRecords=" + nuberOfRecords +
-                ", tags=" + tags +
                 '}';
     }
 }

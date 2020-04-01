@@ -89,7 +89,7 @@
                         <a href="Java" class="homeSubmenu0" >Java</a>
                     </li>
                     <li>
-                        <a href="C/C++" class="homeSubmenu0" >C/C++</a>
+                        <a href="C" class="homeSubmenu0" >C/C++</a>
                     </li>
                     <li>
                         <a href="C#"  class="homeSubmenu0" >C#</a>
@@ -211,7 +211,7 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-12 p-0">
                                     <select class="form-control search-slt" id="exampleFormControlSelect1">
-                                        <option>Select search criteria</option>
+                                        <option>All</option>
                                         <option>Name</option>
                                         <option>Journal</option>
                                         <option>Category</option>
@@ -480,17 +480,11 @@
         <div class="keywords"></div>
     </div>
 </div>
-
 </html>
-
-
 <script>
   $(document).ready(function () {
-    console.log("********************************");
 
     $("#search").submit(function (event) {
-
-//stop submit the form, we will post it manually.
       event.preventDefault();
 
       fire_ajax_submit();
@@ -502,8 +496,6 @@
   function fire_ajax_submit(search) {
 
     $("#btn-search").prop("disabled", true);
-    console.log("***********************************");
-    console.log("Begore AJAX"+search);
     jQuery.ajax({
       type: "POST",
       contentType: "application/json",
@@ -588,9 +580,7 @@
               '<span class="hideKeyWords4 text-nowrap text-secondary text-nowrap">' + fields2 + '&nbsp;<br></span>' +
               '<span class="hideKeyWords4 text-nowrap text-dark text-nowrap">' + appliedpa2 + '&nbsp;</span>' +
               '</td></tr>';
-
           }
-
           jQuery.getScript("css/js/pubPerYearGraph.js").done(function () {
             console.log("yay, all good, do something *");
             drawBarChart(data[0].publicationsPerYear);
@@ -661,29 +651,9 @@
     fire_ajax_submit(search);
   });
 
-//test
-
   $(document).on("click", '.popoverButton', function(evt){
 
         evt.preventDefault();
-  /*
-  * <div class="hidden" id="a1">
-    <div class="popover-heading" id="title">
-        This is the heading for #1
-    </div>
-
-    <div class="popover-body">
-        <div id="abstract">This is the body for #1</div>
-        <div class="text-danger" id="keywords">This is the heading for #2</div>
-    </div>
-</div>
-  * */
-  //.empty()alert("Hello");
-
-    //var clicked_button = $(this);
-    //var abstract = clicked_button.attr("href");
-    //var title = clicked_button.attr("data-title");
-//'<button class="btn btn-success cancel pull-right">Close</button>'
     $('div.popover-heading').empty();
     $('div.abstract').empty();
     $('div.keywords').empty();
@@ -784,6 +754,12 @@
       $("table > tbody > tr").hide().slice(0, selectedCountry).show();
     });
   });
+
+  window.onload = function () {
+      search["category"]="hello"
+      search["search"]="hello"
+      this.fire_ajax_submit(search);
+  }
 </script>
 
 

@@ -1,6 +1,6 @@
-package com.example.springboot.category;
+package ise.lab.um.category;
 
-import com.example.springboot.PublisherInfo;
+import ise.lab.um.model.PublisherInfo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
